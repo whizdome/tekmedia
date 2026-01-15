@@ -1,0 +1,32 @@
+[
+  {
+    "name": "ANAKLE",
+    "tagline": "The Agency",
+    "image": "/assets/company/anakle.jpg",
+    "description": "Marketing is constantly evolving, and our team adapts to help clients build experiences for offline and online platforms, maximising return on advertising investments."
+  },
+  {
+    "name": "ANAKLEFILMS",
+    "tagline": "Films",
+    "image": "/assets/company/anaklefilms.jpg",
+    "description": "Helping you tell interesting stories and bring them to life through different platforms—from animated videos to feature films."
+  },
+  {
+    "name": "ANAKLELABS",
+    "tagline": "Labs",
+    "image": "/assets/company/anaklelabs.jpg",
+    "description": "World‑class product design and end‑to‑end application development, delivering cross‑platform apps and UX‑led iteration to improve product adoption."
+  },
+  {
+    "name": "DROVVO",
+    "tagline": "Data & Insights",
+    "image": "/assets/company/drovvo.jpg",
+    "description": "Data and insights to help brands plot long‑term strategy based on consumer behaviour and design more effective campaigns."
+  },
+  {
+    "name": "FORWARD",
+    "tagline": "Forward",
+    "image": "/assets/company/forward.jpg",
+    "description": "Developing experiences into learning modules—from private executive sessions to workshops—helping brands grow from within."
+  }
+]
