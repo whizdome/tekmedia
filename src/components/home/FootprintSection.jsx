@@ -28,22 +28,21 @@ export default function FootprintSection() {
       </p>
 
       {/* Logo strip (Dotts-style credibility block) */}
-      <div className="mt-10 space-y-4">
+      <div className="mt-10 space-y-4 overflow-hidden">
         {[0, 1].map((row) => (
-          <div
-            key={row}
-            className="flex gap-3 overflow-x-auto hide-scrollbar pb-1"
-          >
-            {[...clients, ...clients].map((c, idx) => (
-              <div
-                key={`${c}-${row}-${idx}`}
-                className="shrink-0 rounded-full border border-white/10 bg-white/5 px-5 py-3"
-              >
-                <div className="text-xs uppercase tracking-[0.22em] text-white/70 whitespace-nowrap">
-                  {c}
+          <div key={row} className="flex overflow-hidden">
+            <div className={`marquee ${row % 2 === 0 ? "" : "reverse"}`}>
+              {[...clients, ...clients].map((c, idx) => (
+                <div
+                  key={`${c}-${row}-${idx}`}
+                  className="shrink-0 rounded-full border border-white/10 bg-white/5 px-6 py-3"
+                >
+                  <div className="text-xs uppercase tracking-[0.22em] text-white/70 whitespace-nowrap">
+                    {c}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         ))}
       </div>
