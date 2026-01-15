@@ -4,27 +4,27 @@ import { Link } from "react-router-dom";
 const caseStudies = [
   {
     id: 1,
-    title: "Brand Campaign Excellence",
-    category: "Digital Marketing",
-    image: "/assets/case-study-1.jpg",
+    title: "Afrobeat Global Launch",
+    category: "Brand Campaign",
+    summary: "Multi-market rollout for a new music platform.",
   },
   {
     id: 2,
-    title: "Performance Growth Strategy",
-    category: "Media Planning",
-    image: "/assets/case-study-2.jpg",
+    title: "Retail Growth Sprint",
+    category: "Performance Media",
+    summary: "Always-on media and CRM automation for eCommerce scale.",
   },
   {
     id: 3,
-    title: "Creative Innovation Project",
+    title: "Fintech Trust Builder",
     category: "Brand Strategy",
-    image: "/assets/case-study-3.jpg",
+    summary: "New visual identity and UX refresh for a digital bank.",
   },
   {
     id: 4,
-    title: "Integrated Campaign Success",
-    category: "Full Service",
-    image: "/assets/case-study-4.jpg",
+    title: "Culture-First Lifestyle Brand",
+    category: "Integrated Campaign",
+    summary: "Social storytelling and experiential brand activations.",
   },
 ];
 
@@ -42,38 +42,35 @@ export default function CaseStudies() {
         </div>
 
         <Link
-          to="/work"
+          to="/about"
           className="text-xs uppercase tracking-[0.18em] text-white/60 hover:text-white transition-colors"
         >
           View All Work
         </Link>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      <div className="flex gap-6 overflow-x-auto pb-2 hide-scrollbar">
         {caseStudies.map((study) => (
           <Link
             key={study.id}
-            to={`/work/${study.id}`}
-            className="group rounded-2xl border border-white/10 bg-white/5 overflow-hidden hover:bg-white/10 transition-colors"
+            to="/about"
+            className="group w-[260px] shrink-0 rounded-2xl border border-white/10 bg-white/5 overflow-hidden hover:bg-white/10 transition-colors"
           >
-            <div className="aspect-[4/5] bg-white/5 relative overflow-hidden">
-              <img
-                src={study.image}
-                alt={study.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                onError={(e) => {
-                  e.target.style.display = "none";
-                }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="aspect-[4/5] relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-white/5" />
+              <div className="absolute inset-0 flex items-end p-5">
+                <div className="text-xs uppercase tracking-[0.18em] text-white/70">
+                  {study.category}
+                </div>
+              </div>
             </div>
             <div className="p-5">
-              <div className="text-xs uppercase tracking-[0.18em] text-white/60">
-                {study.category}
-              </div>
               <h3 className="mt-2 text-lg font-semibold text-white">
                 {study.title}
               </h3>
+              <p className="mt-3 text-sm text-white/70 leading-relaxed">
+                {study.summary}
+              </p>
             </div>
           </Link>
         ))}

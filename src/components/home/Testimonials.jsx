@@ -4,24 +4,24 @@ import { useState, useEffect } from "react";
 const testimonials = [
   {
     quote:
-      "Tek Media transformed our brand presence and delivered exceptional results. Their strategic approach and creative execution exceeded our expectations.",
+      "Tek Media brought clarity to our positioning and delivered a campaign that moved the market in weeks, not months.",
     author: "Sarah Johnson",
-    role: "CMO, TechCorp",
-    company: "TechCorp",
+    role: "CMO, Elevate Fintech",
+    company: "Elevate Fintech",
   },
   {
     quote:
-      "Working with Tek Media has been a game-changer. Their data-driven insights and innovative campaigns have significantly boosted our market share.",
+      "Their team felt like a true extension of ours—strategic, fast, and deeply creative at every touchpoint.",
     author: "Michael Chen",
-    role: "Marketing Director",
-    company: "Global Brands Inc",
+    role: "Marketing Director, Pulse Retail",
+    company: "Pulse Retail",
   },
   {
     quote:
-      "The team at Tek Media understands our business deeply. They've become an extension of our marketing team, delivering consistent excellence.",
+      "We saw immediate lift across brand sentiment and conversion. The work was bold, polished, and measurable.",
     author: "Emily Rodriguez",
-    role: "VP of Marketing",
-    company: "Innovate Solutions",
+    role: "VP of Marketing, Nova Mobility",
+    company: "Nova Mobility",
   },
 ];
 
@@ -40,11 +40,11 @@ export default function Testimonials() {
   return (
     <Section>
       <div className="text-xs uppercase tracking-[0.28em] text-white/60">
-        Client Feedback
+        Client feedback
       </div>
 
       <h2 className="mt-4 text-2xl md:text-3xl font-semibold text-white">
-        What Our Clients Say
+        Trusted by teams who value bold results.
       </h2>
 
       <div className="mt-10 max-w-4xl">
