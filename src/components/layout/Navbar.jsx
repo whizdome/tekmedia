@@ -17,8 +17,12 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-black border-b border-white/10">
       <Container className="py-4 flex items-center justify-between gap-8">
-        <Link to="/" className="font-semibold tracking-wide text-white">
-          TEKMEDIA
+        <Link to="/" className="flex items-center gap-3">
+          <img
+            src="/tekmedia-logo.svg"
+            alt="Tek Media"
+            className="h-8 w-auto"
+          />
         </Link>
 
         {/* Desktop Navigation */}
