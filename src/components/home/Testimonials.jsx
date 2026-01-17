@@ -76,6 +76,7 @@ export default function Testimonials() {
           {testimonials.map((_, idx) => (
             <button
               key={idx}
+              type="button"
               onClick={() => setActiveIndex(idx)}
               className={`slider-dot ${idx === activeIndex ? "active" : ""}`}
               aria-label={`Go to testimonial ${idx + 1}`}

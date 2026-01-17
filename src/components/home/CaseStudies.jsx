@@ -98,6 +98,7 @@ export default function CaseStudies() {
         {caseStudies.map((_, idx) => (
           <button
             key={idx}
+            type="button"
             onClick={() => setActiveIndex(idx)}
             className={`slider-dot ${idx === activeIndex ? "active" : ""}`}
             aria-label={`Go to case study ${idx + 1}`}

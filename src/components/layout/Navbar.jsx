@@ -34,8 +34,8 @@ export default function Navbar() {
               className={({ isActive }) =>
                 `transition-colors ${
                   isActive
-                    ? "text-black"
-                    : "text-black/60 hover:text-black"
+                    ? "text-blue-700"
+                    : "text-black/60 hover:text-blue-700"
                 }`
               }
             >
@@ -47,7 +47,7 @@ export default function Navbar() {
         {/* Desktop CTA */}
         <Link
           to="/contact"
-          className="hidden sm:inline-flex rounded-full bg-blue-600 px-4 py-2 text-xs uppercase tracking-[0.18em] text-white hover:bg-blue-700 transition-colors"
+          className="hidden sm:inline-flex rounded-full bg-blue-600 px-4 py-2 text-xs uppercase tracking-[0.18em] text-white hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 transition-colors"
         >
           Let's Talk
         </Link>
@@ -96,8 +96,8 @@ export default function Navbar() {
                   className={({ isActive }) =>
                     `text-sm uppercase tracking-[0.18em] transition-colors ${
                       isActive
-                        ? "text-black"
-                        : "text-black/60 hover:text-black"
+                        ? "text-blue-700"
+                        : "text-black/60 hover:text-blue-700"
                     }`
                   }
                 >
@@ -107,7 +107,7 @@ export default function Navbar() {
               <Link
                 to="/contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="mt-2 inline-flex rounded-full bg-blue-600 px-4 py-2 text-xs uppercase tracking-[0.18em] text-white hover:bg-blue-700 transition-colors w-fit"
+                className="mt-2 inline-flex rounded-full bg-blue-600 px-4 py-2 text-xs uppercase tracking-[0.18em] text-white hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 transition-colors w-fit"
               >
                 Let's Talk
               </Link>
