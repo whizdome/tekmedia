@@ -7,15 +7,15 @@ export default function BlogPreview() {
     <Section>
       <div className="flex items-end justify-between gap-6">
         <div>
-          <div className="text-xs uppercase tracking-[0.28em] text-white/60">
+          <div className="text-xs uppercase tracking-[0.28em] text-black/60">
             Blog posts
           </div>
-          <h2 className="mt-3 text-2xl md:text-3xl font-semibold text-white">Our Thoughts</h2>
+          <h2 className="mt-3 text-2xl md:text-3xl font-semibold text-black">Our Thoughts</h2>
         </div>
 
         <Link
           to="/blog"
-          className="text-xs uppercase tracking-[0.18em] text-white/60 hover:text-white transition-colors"
+          className="text-xs uppercase tracking-[0.18em] text-blue-700 hover:text-blue-800 transition-colors"
         >
           View More Posts
         </Link>
@@ -26,12 +26,12 @@ export default function BlogPreview() {
           <Link
             key={p.slug}
             to={`/blog/${p.slug}`}
-            className="rounded-2xl border border-white/10 bg-white/5 px-6 py-5 hover:bg-white/10 transition-colors"
+            className="rounded-2xl border border-black/10 bg-white px-6 py-5 shadow-sm hover:shadow-md transition-shadow"
           >
-            <div className="text-xs uppercase tracking-[0.18em] text-white/60">
+            <div className="text-xs uppercase tracking-[0.18em] text-black/60">
               {p.date}
             </div>
-            <div className="mt-3 text-lg font-semibold leading-snug text-white">
+            <div className="mt-3 text-lg font-semibold leading-snug text-black">
               {p.title}
             </div>
           </Link>

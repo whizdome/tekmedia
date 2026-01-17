@@ -14,16 +14,16 @@ export default function FootprintSection() {
   ];
 
   return (
-    <Section>
-      <div className="text-xs uppercase tracking-[0.28em] text-white/60">
+    <Section className="bg-white">
+      <div className="text-xs uppercase tracking-[0.28em] text-blue-700">
         Clients & credibility
       </div>
 
-      <h2 className="mt-4 text-2xl md:text-3xl font-semibold text-white max-w-3xl leading-tight">
+      <h2 className="mt-4 text-2xl md:text-3xl font-semibold text-black max-w-3xl leading-tight">
         Trusted by teams across finance, consumer goods, telecoms and culture.
       </h2>
 
-      <p className="mt-6 max-w-3xl text-white/70 leading-relaxed">
+      <p className="mt-6 max-w-3xl text-black/70 leading-relaxed">
         A snapshot of brands we’ve supported across campaigns, content and growth.
       </p>
 
