@@ -10,15 +10,15 @@ export default function HeroStats() {
     return (
       <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         {/* Selected partners */}
-        <div className="col-span-2 border border-white/10 rounded-lg p-4 space-y-2 bg-white/5">
-          <div className="text-xs uppercase tracking-widest text-white/60">
+        <div className="col-span-2 border border-black/10 rounded-lg p-4 space-y-2 bg-white shadow-sm">
+          <div className="text-xs uppercase tracking-widest text-black/60">
             Selected partners
           </div>
           <div className="flex flex-wrap gap-2 mt-2">
             {partners.map((p) => (
               <span
                 key={p}
-                className="text-sm border border-white/10 px-3 py-1 rounded-full text-white/80 bg-white/5"
+                className="text-sm border border-black/10 px-3 py-1 rounded-full text-black/70 bg-white"
               >
                 {p}
               </span>
@@ -27,19 +27,19 @@ export default function HeroStats() {
         </div>
   
         {/* Years in the field */}
-        <div className="border border-white/10 rounded-lg p-4 flex flex-col justify-between bg-white/5">
-          <div className="text-xs uppercase tracking-widest text-white/60">
+        <div className="border border-black/10 rounded-lg p-4 flex flex-col justify-between bg-white shadow-sm">
+          <div className="text-xs uppercase tracking-widest text-black/60">
             Years in the field
           </div>
-          <div className="mt-2 text-3xl font-bold text-white">10+</div>
+          <div className="mt-2 text-3xl font-bold text-black">10+</div>
         </div>
   
         {/* Campaigns shipped */}
-        <div className="border border-white/10 rounded-lg p-4 flex flex-col justify-between bg-white/5">
-          <div className="text-xs uppercase tracking-widest text-white/60">
+        <div className="border border-black/10 rounded-lg p-4 flex flex-col justify-between bg-white shadow-sm">
+          <div className="text-xs uppercase tracking-widest text-black/60">
             Campaigns shipped
           </div>
-          <div className="mt-2 text-3xl font-bold text-white">500+</div>
+          <div className="mt-2 text-3xl font-bold text-black">500+</div>
         </div>
       </div>
     );

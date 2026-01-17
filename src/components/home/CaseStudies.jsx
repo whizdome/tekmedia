@@ -1,5 +1,6 @@
 import Section from "../ui/Section.jsx";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const caseStudies = [
   {
@@ -29,14 +30,23 @@ const caseStudies = [
 ];
 
 export default function CaseStudies() {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % caseStudies.length);
+    }, 4500);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <Section>
+    <Section className="bg-slate-50">
       <div className="flex items-end justify-between gap-6 mb-10">
         <div>
-          <div className="text-xs uppercase tracking-[0.28em] text-white/60">
+          <div className="text-xs uppercase tracking-[0.28em] text-blue-700">
             Our Work
           </div>
-          <h2 className="mt-3 text-2xl md:text-3xl font-semibold text-white">
+          <h2 className="mt-3 text-2xl md:text-3xl font-semibold text-black">
             Case Studies
           </h2>
         </div>
@@ -72,7 +82,18 @@ export default function CaseStudies() {
                 {study.summary}
               </p>
             </div>
-          </Link>
+          ))}
+        </div>
+      </div>
+      <div className="slider-dots">
+        {caseStudies.map((_, idx) => (
+          <button
+            key={idx}
+            type="button"
+            onClick={() => setActiveIndex(idx)}
+            className={`slider-dot ${idx === activeIndex ? "active" : ""}`}
+            aria-label={`Go to case study ${idx + 1}`}
+          />
         ))}
       </div>
     </Section>
