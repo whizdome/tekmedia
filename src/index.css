@@ -59,23 +59,3 @@ ul, ol { list-style: none; padding-left: 0; margin: 0; }
     transform: translateX(-50%);
   }
 }
-
-.slider-dots {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 20px;
-}
-
-.slider-dot {
-  height: 8px;
-  width: 8px;
-  border-radius: 999px;
-  background: rgba(29, 78, 216, 0.25);
-  transition: width 0.2s ease, background 0.2s ease;
-}
-
-.slider-dot.active {
-  width: 28px;
-  background: #1d4ed8;
-}
