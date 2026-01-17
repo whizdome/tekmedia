@@ -6,10 +6,19 @@ html, body {
 
 body {
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-  background: #0a0a0a;   /* Anakle dark */
-  color: #f5f4f2;        /* off-white text */
+  background: #ffffff;
+  color: #0f0f10;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(29, 78, 216, 0.08), transparent 55%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 a { color: inherit; text-decoration: none; }
@@ -17,9 +26,10 @@ a { color: inherit; text-decoration: none; }
 ul, ol { list-style: none; padding-left: 0; margin: 0; }
 
 :root {
-  --line: rgba(255, 255, 255, 0.14);
-  --surface: rgba(255, 255, 255, 0.06);
-  --surface2: rgba(255, 255, 255, 0.09);
+  --line: rgba(12, 18, 29, 0.12);
+  --surface: rgba(12, 18, 29, 0.04);
+  --surface2: rgba(12, 18, 29, 0.08);
+  --accent: #1d4ed8;
 }
 
 /* helper utilities you can use in className */
@@ -29,3 +39,43 @@ ul, ol { list-style: none; padding-left: 0; margin: 0; }
 
 .hide-scrollbar { scrollbar-width: none; }
 .hide-scrollbar::-webkit-scrollbar { display: none; }
+
+.marquee {
+  display: flex;
+  gap: 12px;
+  width: max-content;
+  animation: marquee 22s linear infinite;
+}
+
+.marquee.reverse {
+  animation-direction: reverse;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.slider-dot {
+  height: 8px;
+  width: 8px;
+  border-radius: 999px;
+  background: rgba(29, 78, 216, 0.25);
+  transition: width 0.2s ease, background 0.2s ease;
+}
+
+.slider-dot.active {
+  width: 28px;
+  background: #1d4ed8;
+}

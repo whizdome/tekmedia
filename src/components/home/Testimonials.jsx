@@ -1,27 +1,27 @@
 import Section from "../ui/Section.jsx";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const testimonials = [
   {
     quote:
-      "Tek Media transformed our brand presence and delivered exceptional results. Their strategic approach and creative execution exceeded our expectations.",
+      "Tek Media brought clarity to our positioning and delivered a campaign that moved the market in weeks, not months.",
     author: "Sarah Johnson",
-    role: "CMO, TechCorp",
-    company: "TechCorp",
+    role: "CMO, Elevate Fintech",
+    company: "Elevate Fintech",
   },
   {
     quote:
-      "Working with Tek Media has been a game-changer. Their data-driven insights and innovative campaigns have significantly boosted our market share.",
+      "Their team felt like a true extension of ours—strategic, fast, and deeply creative at every touchpoint.",
     author: "Michael Chen",
-    role: "Marketing Director",
-    company: "Global Brands Inc",
+    role: "Marketing Director, Pulse Retail",
+    company: "Pulse Retail",
   },
   {
     quote:
-      "The team at Tek Media understands our business deeply. They've become an extension of our marketing team, delivering consistent excellence.",
+      "We saw immediate lift across brand sentiment and conversion. The work was bold, polished, and measurable.",
     author: "Emily Rodriguez",
-    role: "VP of Marketing",
-    company: "Innovate Solutions",
+    role: "VP of Marketing, Nova Mobility",
+    company: "Nova Mobility",
   },
 ];
 
@@ -35,45 +35,49 @@ export default function Testimonials() {
     return () => clearInterval(interval);
   }, []);
 
-  const current = testimonials[activeIndex];
-
   return (
-    <Section>
-      <div className="text-xs uppercase tracking-[0.28em] text-white/60">
-        Client Feedback
+    <Section className="bg-slate-50">
+      <div className="text-xs uppercase tracking-[0.28em] text-blue-700">
+        Client feedback
       </div>
 
-      <h2 className="mt-4 text-2xl md:text-3xl font-semibold text-white">
-        What Our Clients Say
+      <h2 className="mt-4 text-2xl md:text-3xl font-semibold text-black">
+        Trusted by teams who value bold results.
       </h2>
 
       <div className="mt-10 max-w-4xl">
-        <div className="rounded-2xl border border-white/10 bg-white/5 p-8 md:p-12">
-          <blockquote className="text-xl md:text-2xl font-medium leading-relaxed text-white">
-            "{current.quote}"
-          </blockquote>
+        <div className="relative overflow-hidden">
+          <div
+            className="flex transition-transform duration-500"
+            style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+          >
+            {testimonials.map((item) => (
+              <div key={item.author} className="w-full shrink-0 px-3">
+                <div className="rounded-2xl border border-black/10 bg-white p-8 md:p-12 shadow-[0_20px_60px_-40px_rgba(15,23,42,0.25)]">
+                  <blockquote className="text-xl md:text-2xl font-medium leading-relaxed text-black">
+                    "{item.quote}"
+                  </blockquote>
 
-          <div className="mt-8 flex items-center gap-4">
-            <div className="h-12 w-12 rounded-full bg-white/10 flex items-center justify-center text-white font-semibold">
-              {current.author.charAt(0)}
-            </div>
-            <div>
-              <div className="font-semibold text-white">{current.author}</div>
-              <div className="text-sm text-white/60">{current.role}</div>
-            </div>
+                  <div className="mt-8 flex items-center gap-4">
+                    <div className="h-12 w-12 rounded-full bg-blue-600 text-white flex items-center justify-center font-semibold">
+                      {item.author.charAt(0)}
+                    </div>
+                    <div>
+                      <div className="font-semibold text-black">{item.author}</div>
+                      <div className="text-sm text-black/60">{item.role}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-
-        <div className="mt-6 flex gap-2 justify-center">
+        <div className="slider-dots">
           {testimonials.map((_, idx) => (
             <button
               key={idx}
               onClick={() => setActiveIndex(idx)}
-              className={`h-2 rounded-full transition-all ${
-                idx === activeIndex
-                  ? "w-8 bg-white"
-                  : "w-2 bg-white/30 hover:bg-white/50"
-              }`}
+              className={`slider-dot ${idx === activeIndex ? "active" : ""}`}
               aria-label={`Go to testimonial ${idx + 1}`}
             />
           ))}

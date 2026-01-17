@@ -14,36 +14,29 @@ export default function FootprintSection() {
   ];
 
   return (
-    <Section>
-      <div className="text-xs uppercase tracking-[0.28em] text-white/60">
+    <Section className="bg-white">
+      <div className="text-xs uppercase tracking-[0.28em] text-blue-700">
         Clients & credibility
       </div>
 
-      <h2 className="mt-4 text-2xl md:text-3xl font-semibold text-white max-w-3xl leading-tight">
+      <h2 className="mt-4 text-2xl md:text-3xl font-semibold text-black max-w-3xl leading-tight">
         Trusted by teams across finance, consumer goods, telecoms and culture.
       </h2>
 
-      <p className="mt-6 max-w-3xl text-white/70 leading-relaxed">
+      <p className="mt-6 max-w-3xl text-black/70 leading-relaxed">
         A snapshot of brands we’ve supported across campaigns, content and growth.
       </p>
 
-      {/* Logo strip (Dotts-style credibility block) */}
-      <div className="mt-10 space-y-4">
-        {[0, 1].map((row) => (
+      <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {clients.map((c) => (
           <div
-            key={row}
-            className="flex gap-3 overflow-x-auto hide-scrollbar pb-1"
+            key={c}
+            className="flex items-center justify-between rounded-2xl border border-black/10 bg-white px-6 py-5 shadow-sm"
           >
-            {[...clients, ...clients].map((c, idx) => (
-              <div
-                key={`${c}-${row}-${idx}`}
-                className="shrink-0 rounded-full border border-white/10 bg-white/5 px-5 py-3"
-              >
-                <div className="text-xs uppercase tracking-[0.22em] text-white/70 whitespace-nowrap">
-                  {c}
-                </div>
-              </div>
-            ))}
+            <div className="text-xs uppercase tracking-[0.22em] text-black/60">
+              {c}
+            </div>
+            <div className="h-8 w-8 rounded-full bg-blue-50 border border-blue-100" />
           </div>
         ))}
       </div>
