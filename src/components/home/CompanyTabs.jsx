@@ -9,7 +9,7 @@ export default function CompanyTabs() {
 
   return (
     <Section>
-      <h2 className="text-2xl md:text-3xl font-semibold text-black">
+      <h2 className="text-2xl md:text-3xl font-semibold text-white">
         The Company
       </h2>
 
@@ -21,8 +21,8 @@ export default function CompanyTabs() {
             onClick={() => setActive(s.name)}
             className={`px-4 py-2 rounded-full border text-sm transition-colors ${
               s.name === active
-                ? "border-blue-600 bg-blue-600 text-white"
-                : "border-black/10 bg-transparent text-black/60 hover:text-black"
+                ? "border-white/20 bg-white text-[#0a0a0a]"
+                : "border-white/10 bg-transparent text-white/60 hover:text-white"
             }`}
           >
             {s.name.toLowerCase()}
@@ -31,14 +31,14 @@ export default function CompanyTabs() {
       </div>
 
       {/* Active card */}
-      <div className="mt-6 border border-black/10 rounded-xl bg-white max-w-xl p-6 shadow-sm">
-        <div className="text-xs uppercase tracking-widest text-black/60">
+      <div className="mt-6 border border-white/10 rounded-xl bg-white/5 max-w-xl p-6">
+        <div className="text-xs uppercase tracking-widest text-white/60">
           {activeItem.tagline}
         </div>
-        <h3 className="mt-2 text-xl font-semibold text-black">
+        <h3 className="mt-2 text-xl font-semibold text-white">
           {activeItem.name}
         </h3>
-        <p className="mt-4 text-black/70 leading-relaxed">
+        <p className="mt-4 text-white/70 leading-relaxed">
           {activeItem.description}
         </p>
       </div>
