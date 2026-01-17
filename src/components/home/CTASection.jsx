@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 export default function CTASection() {
   return (
-    <Section className="bg-white">
-      <div className="text-center max-w-2xl mx-auto rounded-[28px] border border-black/10 bg-gradient-to-br from-white via-white to-blue-50 px-8 py-12 shadow-[0_25px_70px_-50px_rgba(29,78,216,0.35)]">
-        <div className="text-xs uppercase tracking-[0.28em] text-blue-700">
+    <Section className="bg-transparent">
+      <div className="text-center max-w-2xl mx-auto">
+        <div className="text-xs uppercase tracking-[0.28em] text-white/60">
           Ready when you are
         </div>
         <div className="mt-4 text-2xl md:text-3xl font-semibold leading-tight text-white">

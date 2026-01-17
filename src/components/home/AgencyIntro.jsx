@@ -21,7 +21,7 @@ export default function AgencyIntro() {
         <div className="mt-8">
           <Link
             to="/contact"
-            className="inline-flex rounded-full bg-blue-600 px-5 py-2.5 text-sm text-white hover:bg-blue-700 transition-colors"
+            className="inline-flex rounded-full border border-white/20 px-5 py-2.5 text-sm text-white hover:bg-white hover:text-[#0a0a0a] transition-colors"
           >
             Contact Us
           </Link>
