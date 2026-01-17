@@ -4,7 +4,7 @@ import Footer from "./Footer.jsx";
 
 export default function AppShell() {
   return (
-    <div className="min-h-screen bg-white text-[#0f0f10]">
+    <div className="min-h-screen bg-[#0a0a0a] text-[#f5f4f2]">
       <Navbar />
       <Outlet />
       <Footer />

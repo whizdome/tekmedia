@@ -15,7 +15,7 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-black/10">
+    <header className="sticky top-0 z-50 bg-black border-b border-white/10">
       <Container className="py-4 flex items-center justify-between gap-8">
         <Link to="/" className="flex items-center gap-3">
           <img
@@ -26,16 +26,16 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-6 text-xs uppercase tracking-[0.18em] text-black/70">
-          {nav.map((item) => (
+        <nav className="hidden md:flex items-center gap-6 text-xs uppercase tracking-[0.18em]">
+          {nav.slice(0, 5).map((item) => (
             <NavLink
               key={item.to}
               to={item.to}
               className={({ isActive }) =>
                 `transition-colors ${
                   isActive
-                    ? "text-blue-700"
-                    : "text-black/60 hover:text-blue-700"
+                    ? "text-white"
+                    : "text-white/60 hover:text-white"
                 }`
               }
             >
@@ -47,7 +47,7 @@ export default function Navbar() {
         {/* Desktop CTA */}
         <Link
           to="/contact"
-          className="hidden sm:inline-flex rounded-full bg-blue-600 px-4 py-2 text-xs uppercase tracking-[0.18em] text-white hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 transition-colors"
+          className="hidden sm:inline-flex rounded-full border border-white/20 px-4 py-2 text-xs uppercase tracking-[0.18em] text-white hover:bg-white hover:text-[#0a0a0a] transition-colors"
         >
           Let's Talk
         </Link>
@@ -55,7 +55,7 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden text-black p-2"
+          className="md:hidden text-white p-2"
           aria-label="Toggle menu"
         >
           <svg
@@ -85,7 +85,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-black/10 bg-white">
+        <div className="md:hidden border-t border-white/10 bg-black">
           <Container className="py-4">
             <nav className="flex flex-col gap-4">
               {nav.map((item) => (
@@ -96,8 +96,8 @@ export default function Navbar() {
                   className={({ isActive }) =>
                     `text-sm uppercase tracking-[0.18em] transition-colors ${
                       isActive
-                        ? "text-blue-700"
-                        : "text-black/60 hover:text-blue-700"
+                        ? "text-white"
+                        : "text-white/60 hover:text-white"
                     }`
                   }
                 >
@@ -107,7 +107,7 @@ export default function Navbar() {
               <Link
                 to="/contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="mt-2 inline-flex rounded-full bg-blue-600 px-4 py-2 text-xs uppercase tracking-[0.18em] text-white hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 transition-colors w-fit"
+                className="mt-2 inline-flex rounded-full border border-white/20 px-4 py-2 text-xs uppercase tracking-[0.18em] text-white hover:bg-white hover:text-[#0a0a0a] transition-colors w-fit"
               >
                 Let's Talk
               </Link>
