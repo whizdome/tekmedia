@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function AgencyIntro() {
   return (
-    <Section>
+    <Section className="bg-[#0a0a0a] text-white">
       <div className="max-w-4xl">
         <div className="text-xs uppercase tracking-[0.28em] text-white/60">
           Agency introduction
