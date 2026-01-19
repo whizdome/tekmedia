@@ -1,57 +1,61 @@
 export default function AboutTabs() {
-    return (
-      <section className="bg-white py-16">
-        <div className="max-w-6xl mx-auto px-4">
-          {/* Big image placeholder (replace later) */}
-          <div className="h-72 md:h-[420px] rounded-2xl bg-zinc-100 border border-zinc-900/10" />
-  
-          {/* Tab bar */}
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a
-              href="#working"
-              className="px-4 py-2 rounded-full border border-zinc-900/15 bg-white text-sm hover:bg-zinc-50"
-            >
-              Working at Anakle
-            </a>
-            <a
-              href="#careers"
-              className="px-4 py-2 rounded-full border border-zinc-900/15 bg-white text-sm hover:bg-zinc-50"
-            >
-              Careers
-            </a>
-            <a
-              href="#internships"
-              className="px-4 py-2 rounded-full border border-zinc-900/15 bg-white text-sm hover:bg-zinc-50"
-            >
-              Internships
-            </a>
+  return (
+    <section className="bg-white py-16">
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="h-72 md:h-[420px] rounded-2xl bg-blue-50 border border-black/10 flex items-center justify-center text-xs uppercase tracking-[0.3em] text-blue-700">
+          Studio highlight
+        </div>
+
+        <div className="mt-8 flex flex-wrap gap-3">
+          <a
+            href="#approach"
+            className="px-4 py-2 rounded-full border border-black/10 bg-white text-sm hover:bg-slate-50"
+          >
+            Our Approach
+          </a>
+          <a
+            href="#culture"
+            className="px-4 py-2 rounded-full border border-black/10 bg-white text-sm hover:bg-slate-50"
+          >
+            Culture
+          </a>
+          <a
+            href="#capabilities"
+            className="px-4 py-2 rounded-full border border-black/10 bg-white text-sm hover:bg-slate-50"
+          >
+            Capabilities
+          </a>
+        </div>
+
+        <div className="mt-10 space-y-16">
+          <div id="approach">
+            <h2 className="text-2xl font-semibold tracking-tight">Our Approach</h2>
+            <p className="mt-3 text-black/70 leading-relaxed max-w-3xl">
+              Tek Media blends strategy, creative, and media to build brand
+              systems that scale across channels and convert attention into
+              measurable growth.
+            </p>
           </div>
-  
-          {/* Sections */}
-          <div className="mt-10 space-y-16">
-            <div id="working">
-              <h2 className="text-2xl font-semibold tracking-tight">Working at Anakle</h2>
-              <p className="mt-3 text-zinc-700 leading-relaxed max-w-3xl">
-                Placeholder section. Add the “working culture / studio” content here.
-              </p>
-            </div>
-  
-            <div id="careers">
-              <h2 className="text-2xl font-semibold tracking-tight">Careers</h2>
-              <p className="mt-3 text-zinc-700 leading-relaxed max-w-3xl">
-                Placeholder section. Add recruitment/careers info here.
-              </p>
-            </div>
-  
-            <div id="internships">
-              <h2 className="text-2xl font-semibold tracking-tight">Internships</h2>
-              <p className="mt-3 text-zinc-700 leading-relaxed max-w-3xl">
-                Placeholder section. Add internship info here.
-              </p>
-            </div>
+
+          <div id="culture">
+            <h2 className="text-2xl font-semibold tracking-tight">Culture</h2>
+            <p className="mt-3 text-black/70 leading-relaxed max-w-3xl">
+              We are a collaborative team of strategists, storytellers, and
+              makers obsessed with turning ambitious ideas into real-world
+              impact.
+            </p>
+          </div>
+
+          <div id="capabilities">
+            <h2 className="text-2xl font-semibold tracking-tight">Capabilities</h2>
+            <p className="mt-3 text-black/70 leading-relaxed max-w-3xl">
+              Brand strategy, identity, content systems, performance marketing,
+              product design, and campaign execution across digital and
+              experiential touchpoints.
+            </p>
           </div>
         </div>
-      </section>
-    );
-  }
-  
+      </div>
+    </section>
+  );
+}
