@@ -25,7 +25,7 @@ const differentiators = [
 
 export default function Differentiation() {
   return (
-    <Section>
+    <Section className="bg-[#0a0a0a] text-white">
       <div className="grid gap-12 lg:grid-cols-[1.1fr_2fr] items-start">
         <div>
           <div className="text-xs uppercase tracking-[0.28em] text-white/60">
