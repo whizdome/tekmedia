@@ -9,7 +9,7 @@ export default function SubsidiarySlider() {
   return (
     <Section className="bg-transparent">
       <div className="flex items-end justify-between gap-6">
-        <h2 className="text-2xl md:text-3xl font-semibold text-white">The Company</h2>
+        <h2 className="text-2xl md:text-3xl font-semibold text-black">The Company</h2>
       </div>
 
       <div className="mt-8">
@@ -29,8 +29,8 @@ export default function SubsidiarySlider() {
                 onClick={() => setActive(idx)}
                 className={`shrink-0 rounded-full px-4 py-2 text-xs uppercase tracking-[0.18em] transition-colors ${
                   isActive
-                    ? "border border-white/20 bg-white text-[#0a0a0a]"
-                    : "border border-white/10 bg-transparent text-white/60 hover:text-white"
+                    ? "border border-blue-600 bg-blue-600 text-white"
+                    : "border border-black/10 bg-transparent text-black/60 hover:text-black"
                 }`}
               >
                 {item.name}
@@ -42,18 +42,18 @@ export default function SubsidiarySlider() {
         <div className="mt-8 grid gap-8 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] items-start">
           <div
             role="tabpanel"
-            className="rounded-2xl border border-white/10 bg-white/5 p-8"
+            className="rounded-2xl border border-black/10 bg-white p-8 shadow-sm"
           >
-            <div className="text-xs uppercase tracking-[0.28em] text-white/60">
+            <div className="text-xs uppercase tracking-[0.28em] text-black/60">
               {current?.tagline}
             </div>
-            <h3 className="mt-3 text-2xl font-semibold text-white">{current?.name}</h3>
-            <p className="mt-4 text-white/70 leading-relaxed">
+            <h3 className="mt-3 text-2xl font-semibold text-black">{current?.name}</h3>
+            <p className="mt-4 text-black/70 leading-relaxed">
               {current?.description}
             </p>
           </div>
 
-          <div className="rounded-2xl border border-white/10 bg-white/5 overflow-hidden">
+          <div className="rounded-2xl border border-black/10 bg-white overflow-hidden shadow-sm">
             {current?.image ? (
               <img
                 src={current.image}
@@ -62,7 +62,7 @@ export default function SubsidiarySlider() {
                 loading="lazy"
               />
             ) : (
-              <div className="h-64 md:h-full flex items-center justify-center text-xs uppercase tracking-[0.28em] text-white/60">
+              <div className="h-64 md:h-full flex items-center justify-center text-xs uppercase tracking-[0.28em] text-black/60">
                 Image placeholder
               </div>
             )}
