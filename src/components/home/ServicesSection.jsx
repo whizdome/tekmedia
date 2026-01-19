@@ -3,39 +3,39 @@ import services from "../../data/services.json";
 
 export default function ServicesSection() {
   return (
-    <Section className="bg-slate-50">
-      <div className="grid gap-12 lg:grid-cols-[1.1fr_2fr] items-start">
+    <Section>
+      <div className="grid gap-12 lg:grid-cols-[1.1fr_2fr]">
         <div>
-          <div className="text-xs uppercase tracking-[0.28em] text-blue-700">
-            Services
+          <div className="text-xs uppercase tracking-[0.28em] text-white/60">
+            What we do
           </div>
-          <h2 className="mt-4 text-2xl md:text-4xl font-semibold max-w-md leading-tight text-black">
-            An overview of what we do.
+          <h2 className="mt-4 text-2xl md:text-3xl font-semibold max-w-md leading-tight text-white">
+            A full creative stack for modern brands.
           </h2>
-          <p className="mt-6 text-black/70 leading-relaxed">
-            We blend advertising, digital marketing, brand strategy, and
-            experience design to help organizations communicate clearly, earn
-            trust, and accelerate growth across channels.
+          <p className="mt-6 text-white/70 leading-relaxed">
+            From brand systems to launch campaigns, we design end‑to‑end
+            experiences that connect with culture and deliver measurable growth.
           </p>
         </div>
 
-        <div className="rounded-[28px] bg-[#0f1b3d] p-8 md:p-10 text-white shadow-[0_25px_70px_-50px_rgba(15,27,61,0.6)]">
-          <div className="grid gap-8 md:grid-cols-2">
-            {services.map((s) => (
-              <div key={s.title}>
-                <h3 className="text-xs uppercase tracking-[0.22em] font-semibold text-blue-200">
-                  {s.title}
-                </h3>
-                <ul className="mt-4 space-y-2 text-sm text-white/80">
-                  {s.items.map((it) => (
-                    <li key={it} className="leading-relaxed">
-                      {it}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
+        <div className="grid gap-6 md:grid-cols-2">
+          {services.map((s) => (
+            <div
+              key={s.title}
+              className="rounded-2xl border border-white/10 bg-white/5 p-6"
+            >
+              <h3 className="text-xs uppercase tracking-[0.22em] font-semibold text-white">
+                {s.title}
+              </h3>
+              <ul className="mt-4 space-y-2 text-sm text-white/70">
+                {s.items.map((it) => (
+                  <li key={it} className="leading-relaxed">
+                    {it}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </div>
     </Section>

@@ -5,16 +5,17 @@ export default function AgencyIntro() {
   return (
     <Section>
       <div className="max-w-4xl">
-        <div className="text-xs uppercase tracking-[0.28em] text-blue-700">
+        <div className="text-xs uppercase tracking-[0.28em] text-white/60">
           Agency introduction
         </div>
-        <h2 className="mt-4 text-2xl md:text-3xl font-semibold leading-tight text-black">
-          Tek Media is a growth-focused agency delivering strategy, creative,
-          and media that help brands earn attention and accelerate revenue.
+        <h2 className="mt-4 text-2xl md:text-3xl font-semibold leading-tight text-white">
+          Tek Media is a full‑service agency blending strategy, creative, and
+          media to deliver bold ideas that scale across channels.
         </h2>
-        <p className="mt-6 text-black/70 leading-relaxed">
-          We position your brand with clarity, craft bold experiences, and
-          connect you to the audiences that matter most.
+        <p className="mt-6 text-white/70 leading-relaxed">
+          We help growth-minded brands unlock the next layer of influence by
+          building distinct identities, seamless digital ecosystems, and
+          conversion-focused storytelling.
         </p>
 
         <div className="mt-8">

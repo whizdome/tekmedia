@@ -27,16 +27,22 @@ export default function FootprintSection() {
         A snapshot of brands we’ve supported across campaigns, content and growth.
       </p>
 
-      <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {clients.map((c) => (
-          <div
-            key={c}
-            className="flex items-center justify-between rounded-2xl border border-black/10 bg-white px-6 py-5 shadow-sm"
-          >
-            <div className="text-xs uppercase tracking-[0.22em] text-black/60">
-              {c}
+      {/* Logo strip (Dotts-style credibility block) */}
+      <div className="mt-10 space-y-4 overflow-hidden">
+        {[0, 1].map((row) => (
+          <div key={row} className="flex overflow-hidden">
+            <div className={`marquee ${row % 2 === 0 ? "" : "reverse"}`}>
+              {[...clients, ...clients].map((c, idx) => (
+                <div
+                  key={`${c}-${row}-${idx}`}
+                  className="shrink-0 rounded-full border border-white/10 bg-white/5 px-6 py-3"
+                >
+                  <div className="text-xs uppercase tracking-[0.22em] text-white/70 whitespace-nowrap">
+                    {c}
+                  </div>
+                </div>
+              ))}
             </div>
-            <div className="h-8 w-8 rounded-full bg-blue-50 border border-blue-100" />
           </div>
         ))}
       </div>
