@@ -36,12 +36,12 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <Section className="bg-slate-50">
-      <div className="text-xs uppercase tracking-[0.28em] text-blue-700">
+    <Section>
+      <div className="text-xs uppercase tracking-[0.28em] text-white/60">
         Client feedback
       </div>
 
-      <h2 className="mt-4 text-2xl md:text-3xl font-semibold text-black">
+      <h2 className="mt-4 text-2xl md:text-3xl font-semibold text-white">
         Trusted by teams who value bold results.
       </h2>
 
