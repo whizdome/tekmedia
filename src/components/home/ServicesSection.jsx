@@ -3,7 +3,7 @@ import services from "../../data/services.json";
 
 export default function ServicesSection() {
   return (
-    <Section>
+    <Section className="bg-[#0a0a0a] text-white">
       <div className="grid gap-12 lg:grid-cols-[1.1fr_2fr]">
         <div>
           <div className="text-xs uppercase tracking-[0.28em] text-white/60">

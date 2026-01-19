@@ -36,7 +36,7 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <Section>
+    <Section className="bg-[#0a0a0a] text-white">
       <div className="text-xs uppercase tracking-[0.28em] text-white/60">
         Client feedback
       </div>
