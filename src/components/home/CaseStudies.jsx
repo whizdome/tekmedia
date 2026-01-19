@@ -53,43 +53,34 @@ export default function CaseStudies() {
 
         <Link
           to="/about"
-          className="text-xs uppercase tracking-[0.18em] text-blue-700 hover:text-blue-800 transition-colors"
+          className="text-xs uppercase tracking-[0.18em] text-white/60 hover:text-white transition-colors"
         >
           View All Work
         </Link>
       </div>
 
-      <div className="relative overflow-hidden">
-        <div
-          className="flex transition-transform duration-500"
-          style={{ transform: `translateX(-${activeIndex * 100}%)` }}
-        >
-          {caseStudies.map((study) => (
-            <div key={study.id} className="w-full shrink-0 px-3">
-              <Link
-                to="/about"
-                className="group block rounded-2xl border border-black/10 bg-white overflow-hidden hover:shadow-xl transition-shadow"
-              >
-                <div className="aspect-[4/5] relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-white" />
-                  <div className="absolute inset-0 flex items-end p-5">
-                    <div className="text-xs uppercase tracking-[0.18em] text-blue-700">
-                      {study.category}
-                    </div>
-                  </div>
-                  <div className="absolute right-4 top-4 rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-[0.6rem] uppercase tracking-[0.24em] text-blue-700">
-                    Featured
-                  </div>
+      <div className="flex gap-6 overflow-x-auto pb-2 hide-scrollbar">
+        {caseStudies.map((study) => (
+          <Link
+            key={study.id}
+            to="/about"
+            className="group w-[260px] shrink-0 rounded-2xl border border-white/10 bg-white/5 overflow-hidden hover:bg-white/10 transition-colors"
+          >
+            <div className="aspect-[4/5] relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-white/5" />
+              <div className="absolute inset-0 flex items-end p-5">
+                <div className="text-xs uppercase tracking-[0.18em] text-white/70">
+                  {study.category}
                 </div>
-                <div className="p-5">
-                  <h3 className="mt-2 text-lg font-semibold text-black">
-                    {study.title}
-                  </h3>
-                  <p className="mt-3 text-sm text-black/70 leading-relaxed">
-                    {study.summary}
-                  </p>
-                </div>
-              </Link>
+              </div>
+            </div>
+            <div className="p-5">
+              <h3 className="mt-2 text-lg font-semibold text-white">
+                {study.title}
+              </h3>
+              <p className="mt-3 text-sm text-white/70 leading-relaxed">
+                {study.summary}
+              </p>
             </div>
           ))}
         </div>
