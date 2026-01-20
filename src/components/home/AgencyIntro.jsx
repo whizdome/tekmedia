@@ -3,16 +3,16 @@ import { Link } from "react-router-dom";
 
 export default function AgencyIntro() {
   return (
-    <Section className="bg-[#0a0a0a] text-white">
+    <Section className="bg-white text-black">
       <div className="max-w-4xl">
-        <div className="text-xs uppercase tracking-[0.28em] text-white/60">
+        <div className="text-xs uppercase tracking-[0.28em] text-blue-700">
           Agency introduction
         </div>
-        <h2 className="mt-4 text-2xl md:text-3xl font-semibold leading-tight text-white">
+        <h2 className="mt-4 text-2xl md:text-3xl font-semibold leading-tight text-black">
           Tek Media is a full‑service agency blending strategy, creative, and
           media to deliver bold ideas that scale across channels.
         </h2>
-        <p className="mt-6 text-white/70 leading-relaxed">
+        <p className="mt-6 text-black/70 leading-relaxed">
           We help growth-minded brands unlock the next layer of influence by
           building distinct identities, seamless digital ecosystems, and
           conversion-focused storytelling.

@@ -25,16 +25,16 @@ const differentiators = [
 
 export default function Differentiation() {
   return (
-    <Section className="bg-[#0a0a0a] text-white">
+    <Section className="bg-white text-black">
       <div className="grid gap-12 lg:grid-cols-[1.1fr_2fr] items-start">
         <div>
-          <div className="text-xs uppercase tracking-[0.28em] text-white/60">
+          <div className="text-xs uppercase tracking-[0.28em] text-blue-700">
             What sets us apart
           </div>
-          <h2 className="mt-4 text-2xl md:text-3xl font-semibold max-w-md leading-tight text-white">
+          <h2 className="mt-4 text-2xl md:text-3xl font-semibold max-w-md leading-tight text-black">
             We build distinct, measurable, and scalable brand systems.
           </h2>
-          <p className="mt-6 text-white/70 leading-relaxed">
+          <p className="mt-6 text-black/70 leading-relaxed">
             Tek Media blends strategic clarity with bold creativity, ensuring
             every activation is grounded in insight and executed with precision.
           </p>
@@ -44,12 +44,12 @@ export default function Differentiation() {
           {differentiators.map((item, idx) => (
             <div
               key={idx}
-              className="rounded-2xl border border-white/10 bg-white/5 p-6"
+              className="rounded-2xl border border-black/10 bg-slate-50 p-6 shadow-sm"
             >
-              <h3 className="text-lg font-semibold text-white mb-3">
+              <h3 className="text-lg font-semibold text-black mb-3">
                 {item.title}
               </h3>
-              <p className="text-sm text-white/70 leading-relaxed">
+              <p className="text-sm text-black/70 leading-relaxed">
                 {item.description}
               </p>
             </div>
