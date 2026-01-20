@@ -14,8 +14,8 @@ export default function FootprintSection() {
   ];
 
   return (
-    <Section className="bg-[#0a0a0a] text-white">
-      <div className="text-xs uppercase tracking-[0.28em] text-blue-300">
+    <Section className="bg-white text-black">
+      <div className="text-xs uppercase tracking-[0.28em] text-blue-700">
         Clients & credibility
       </div>
 
@@ -35,9 +35,9 @@ export default function FootprintSection() {
               {[...clients, ...clients].map((c, idx) => (
                 <div
                   key={`${c}-${row}-${idx}`}
-                  className="shrink-0 rounded-full border border-white/10 bg-white/5 px-6 py-3"
+                  className="shrink-0 rounded-full border border-black/10 bg-slate-50 px-6 py-3"
                 >
-                  <div className="text-xs uppercase tracking-[0.22em] text-white/70 whitespace-nowrap">
+                  <div className="text-xs uppercase tracking-[0.22em] text-black/60 whitespace-nowrap">
                     {c}
                   </div>
                 </div>
