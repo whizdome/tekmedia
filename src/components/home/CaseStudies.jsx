@@ -40,7 +40,7 @@ export default function CaseStudies() {
   }, []);
 
   return (
-    <Section className="bg-slate-50">
+    <Section className="bg-white text-black">
       <div className="flex items-end justify-between gap-6 mb-10">
         <div>
           <div className="text-xs uppercase tracking-[0.28em] text-blue-700">
@@ -53,7 +53,7 @@ export default function CaseStudies() {
 
         <Link
           to="/about"
-          className="text-xs uppercase tracking-[0.18em] text-white/60 hover:text-white transition-colors"
+          className="text-xs uppercase tracking-[0.18em] text-blue-700 hover:text-blue-800 transition-colors"
         >
           View All Work
         </Link>
@@ -64,26 +64,26 @@ export default function CaseStudies() {
           <Link
             key={study.id}
             to="/about"
-            className="group w-[260px] shrink-0 rounded-2xl border border-white/10 bg-white/5 overflow-hidden hover:bg-white/10 transition-colors"
+            className="group w-[260px] shrink-0 rounded-2xl border border-black/10 bg-white overflow-hidden shadow-sm transition-transform hover:-translate-y-1 hover:shadow-md"
           >
             <div className="aspect-[4/5] relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-white/5" />
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-blue-100/40" />
               <div className="absolute inset-0 flex items-end p-5">
-                <div className="text-xs uppercase tracking-[0.18em] text-white/70">
+                <div className="text-xs uppercase tracking-[0.18em] text-blue-700">
                   {study.category}
                 </div>
               </div>
             </div>
             <div className="p-5">
-              <h3 className="mt-2 text-lg font-semibold text-white">
+              <h3 className="mt-2 text-lg font-semibold text-black">
                 {study.title}
               </h3>
-              <p className="mt-3 text-sm text-white/70 leading-relaxed">
+              <p className="mt-3 text-sm text-black/70 leading-relaxed">
                 {study.summary}
               </p>
             </div>
-          ))}
-        </div>
+          </Link>
+        ))}
       </div>
       <div className="slider-dots">
         {caseStudies.map((_, idx) => (
