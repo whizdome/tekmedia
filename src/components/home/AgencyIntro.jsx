@@ -29,7 +29,7 @@ export default function AgencyIntro() {
         <div className="order-1 lg:order-2">
           <div className="overflow-hidden rounded-3xl border border-black/10 bg-slate-50 shadow-sm">
             <img
-              src="/agency-hero.svg"
+              src="/agency-hero.jpg"
               alt="Tek Media creative studio preview"
               className="h-full w-full object-cover"
               loading="lazy"
