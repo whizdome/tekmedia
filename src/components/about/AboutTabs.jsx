@@ -2,8 +2,17 @@ export default function AboutTabs() {
   return (
     <section className="bg-white py-16">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="h-72 md:h-[420px] rounded-2xl bg-blue-50 border border-black/10 flex items-center justify-center text-xs uppercase tracking-[0.3em] text-blue-700">
-          Studio highlight
+        <div className="h-72 md:h-[420px] rounded-2xl bg-blue-50 border border-black/10 flex flex-col items-center justify-center gap-4 text-center px-6">
+          <div className="text-xs uppercase tracking-[0.3em] text-blue-700">
+            Studio highlight
+          </div>
+          <div className="text-3xl md:text-4xl font-semibold text-black">
+            120+ campaigns delivered across 18 markets.
+          </div>
+          <p className="max-w-2xl text-sm text-black/70 leading-relaxed">
+            From fintech launches to culture-first activations, we build the systems,
+            identities, and growth plans that help brands earn attention and keep it.
+          </p>
         </div>
 
         <div className="mt-8 flex flex-wrap gap-3">
