@@ -2,16 +2,34 @@ import Section from "../ui/Section.jsx";
 
 export default function FootprintSection() {
   const logos = [
-    { name: "Puexchange", file: "puexchange.png" },
-    { name: "Casio Music MEA", file: "casio-music-mea.png" },
-    { name: "Syinix", file: "syinix.png" },
-    { name: "Blue Circle", file: "blue-circle.png" },
-    { name: "Rhapsody's", file: "rhapsodys.png" },
-    { name: "KAM Consulting", file: "kam-consulting.png" },
-    { name: "Catalyst Business Consult", file: "catalyst-business-consult.png" },
-    { name: "Slurp Juices", file: "slurp-juices.png" },
-    { name: "Dawn Carrington", file: "dawn-carrington.png" },
-    { name: "Urban Gee Gadgets", file: "urban-gee-gadgets.png" },
+    { name: "Puexchange", file: "IMG_4501.PNG" },
+    { name: "Casio Music MEA", file: "IMG_4502.PNG" },
+    { name: "Syinix", file: "IMG_4503.JPG" },
+    { name: "Blue Circle", file: "IMG_4504.PNG" },
+    { name: "Rhapsody's", file: "IMG_4505.PNG" },
+    { name: "KAM Consulting", file: "IMG_4506.PNG" },
+    { name: "Catalyst Business Consult", file: "IMG_4507.PNG" },
+    { name: "Slurp Juices", file: "IMG_4508.PNG" },
+    { name: "Dawn Carrington", file: "IMG_4509.PNG" },
+    { name: "Urban Gee Gadgets", file: "IMG_4510.PNG" },
+    { name: "Brand Partner", file: "IMG_4511.PNG" },
+    { name: "Royal Rest", file: "IMG_4513.PNG" },
+  ];
+  const shuffle = (items, seed) => {
+    const list = [...items];
+    let value = seed;
+    for (let i = list.length - 1; i > 0; i -= 1) {
+      value = (value * 9301 + 49297) % 233280;
+      const rand = value / 233280;
+      const j = Math.floor(rand * (i + 1));
+      [list[i], list[j]] = [list[j], list[i]];
+    }
+    return list;
+  };
+  const rows = [
+    shuffle(logos, 7),
+    shuffle(logos, 19),
+    shuffle(logos, 31),
   ];
 
   return (
@@ -28,18 +46,26 @@ export default function FootprintSection() {
         A snapshot of brands we’ve supported across campaigns, content and growth.
       </p>
 
-      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
-        {logos.map((logo) => (
+      <div className="mt-10 space-y-6 overflow-hidden">
+        {rows.map((row, rowIndex) => (
           <div
-            key={logo.name}
-            className="flex h-24 items-center justify-center rounded-2xl border border-black/10 bg-white shadow-sm"
+            key={`row-${rowIndex}`}
+            className={`marquee gap-6 ${rowIndex % 2 === 1 ? "reverse" : ""}`}
           >
-            <img
-              src={`/logos/${logo.file}`}
-              alt={`${logo.name} logo`}
-              className="h-12 w-auto max-w-[140px] object-contain"
-              loading="lazy"
-            />
+            {[...row, ...row].map((logo, index) => (
+              <div
+                key={`${logo.name}-${rowIndex}-${index}`}
+                className="flex h-24 w-[180px] items-center justify-center rounded-2xl border border-black/10 bg-white shadow-sm"
+                aria-hidden={index >= row.length}
+              >
+                <img
+                  src={`/logos/${logo.file}`}
+                  alt={`${logo.name} logo`}
+                  className="h-12 w-auto max-w-[140px] object-contain"
+                  loading="lazy"
+                />
+              </div>
+            ))}
           </div>
         ))}
       </div>
