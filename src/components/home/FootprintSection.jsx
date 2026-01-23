@@ -4,8 +4,8 @@ export default function FootprintSection() {
   const logos = [
     { name: "Puexchange", file: "IMG_4501.PNG" },
     { name: "Casio Music MEA", file: "IMG_4502.PNG" },
-    { name: "Syinix", file: "IMG_4503.JPG   " },
-    { name: "Blue Circle", file: "IMG_4504.PNG" },
+    { name: "Syinix", file: "IMG_4503.PNG" },
+    { name: "Jeroid", file: "IMG_4504.PNG" },
     { name: "Rhapsody's", file: "IMG_4505.PNG" },
     { name: "KAM Consulting", file: "IMG_4506.PNG" },
     { name: "Catalyst Business Consult", file: "IMG_4507.PNG" },
@@ -58,13 +58,18 @@ export default function FootprintSection() {
                 className="flex h-24 w-[180px] items-center justify-center rounded-2xl border border-black/10 bg-white shadow-sm"
                 aria-hidden={index >= row.length}
               >
+              <div className="flex flex-col items-center gap-2 text-center">
                 <img
                   src={`/logos/${logo.file}`}
                   alt={`${logo.name} logo`}
                   className="h-12 w-auto max-w-[140px] object-contain"
                   loading="lazy"
                 />
+                <span className="text-xs font-medium text-blue-700">
+                  {logo.name}
+                </span>
               </div>
+            </div>
             ))}
           </div>
         ))}
