@@ -1,33 +1,7 @@
 import Section from "../ui/Section.jsx";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-
-const caseStudies = [
-  {
-    id: 1,
-    title: "Afrobeat Global Launch",
-    category: "Brand Campaign",
-    summary: "Multi-market rollout for a new music platform.",
-  },
-  {
-    id: 2,
-    title: "Retail Growth Sprint",
-    category: "Performance Media",
-    summary: "Always-on media and CRM automation for eCommerce scale.",
-  },
-  {
-    id: 3,
-    title: "Fintech Trust Builder",
-    category: "Brand Strategy",
-    summary: "New visual identity and UX refresh for a digital bank.",
-  },
-  {
-    id: 4,
-    title: "Culture-First Lifestyle Brand",
-    category: "Integrated Campaign",
-    summary: "Social storytelling and experiential brand activations.",
-  },
-];
+import caseStudies from "../../data/caseStudies.js";
 
 export default function CaseStudies() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -62,8 +36,8 @@ export default function CaseStudies() {
       <div className="flex gap-6 overflow-x-auto pb-2 hide-scrollbar">
         {caseStudies.map((study) => (
           <Link
-            key={study.id}
-            to="/about"
+            key={study.slug}
+            to={`/case-studies/${study.slug}`}
             className="group w-[260px] shrink-0 rounded-2xl border border-black/10 bg-white overflow-hidden shadow-sm transition-transform hover:-translate-y-1 hover:shadow-md"
           >
             <div className="aspect-[4/5] relative overflow-hidden">
