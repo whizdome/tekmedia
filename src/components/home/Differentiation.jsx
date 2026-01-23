@@ -2,24 +2,24 @@ import Section from "../ui/Section.jsx";
 
 const differentiators = [
   {
-    title: "Data-Driven Strategy",
+    title: "Strategic Foundation",
     description:
-      "Every campaign is backed by comprehensive data analysis and insights to ensure maximum impact and ROI.",
+      "Every engagement begins with clear direction. Purpose, audience, and application are defined before production starts.",
   },
   {
-    title: "Creative Excellence",
+    title: "Creative Discipline",
     description:
-      "We combine strategic thinking with award-winning creative to deliver campaigns that resonate and convert.",
+      "Our work is guided by established standards and thoughtful decision-making, not guesswork or passing trends.",
   },
   {
-    title: "Integrated Approach",
+    title: "Scalable Execution",
     description:
-      "From digital to experiential, we create seamless brand experiences across all touchpoints.",
+      "We design content systems that can be reused, adapted, and expanded across platforms without losing coherence.",
   },
   {
-    title: "Results Focused",
+    title: "Accountable Performance",
     description:
-      "We measure success by the growth and impact we deliver for our clients, not just creative awards.",
+      "Creative decisions are reviewed against outcomes, ensuring performance is measured and refined over time.",
   },
 ];
 
@@ -31,12 +31,14 @@ export default function Differentiation() {
           <div className="text-xs uppercase tracking-[0.28em] text-blue-700">
             What sets us apart
           </div>
-          <h2 className="mt-4 text-2xl md:text-3xl font-semibold max-w-md leading-tight text-black">
-            We build distinct, measurable, and scalable brand systems.
+          <h2 className="mt-4 text-3xl md:text-4xl font-semibold max-w-md leading-tight text-black">
+            We build visual systems brands can rely on.
           </h2>
-          <p className="mt-6 text-black/70 leading-relaxed">
-            Tek Media blends strategic clarity with bold creativity, ensuring
-            every activation is grounded in insight and executed with precision.
+          <p className="mt-6 text-base md:text-lg text-black/70 leading-relaxed">
+            Tek Media collaborates with brands that prioritize clarity,
+            consistency, and long-term effectiveness in their creative
+            endeavors. Our focus is not volume or trends, but structure, intent,
+            and execution that holds up.
           </p>
         </div>
 
@@ -46,10 +48,10 @@ export default function Differentiation() {
               key={idx}
               className="rounded-2xl border border-black/10 bg-slate-50 p-6 shadow-sm"
             >
-              <h3 className="text-lg font-semibold text-black mb-3">
+              <h3 className="text-lg md:text-xl font-semibold text-black mb-3">
                 {item.title}
               </h3>
-              <p className="text-sm text-black/70 leading-relaxed">
+              <p className="text-sm md:text-base text-black/70 leading-relaxed">
                 {item.description}
               </p>
             </div>
