@@ -1,20 +1,21 @@
 import Section from "../ui/Section.jsx";
 
 export default function FootprintSection() {
-  const clients = [
-    "British Council",
-    "Wikipedia",
-    "Mastercard",
-    "Access Bank",
-    "GLO",
-    "Spotify",
-    "Diageo",
-    "MTN",
-    "P&G",
+  const logos = [
+    { name: "Puexchange", file: "puexchange.png" },
+    { name: "Casio Music MEA", file: "casio-music-mea.png" },
+    { name: "Syinix", file: "syinix.png" },
+    { name: "Blue Circle", file: "blue-circle.png" },
+    { name: "Rhapsody's", file: "rhapsodys.png" },
+    { name: "KAM Consulting", file: "kam-consulting.png" },
+    { name: "Catalyst Business Consult", file: "catalyst-business-consult.png" },
+    { name: "Slurp Juices", file: "slurp-juices.png" },
+    { name: "Dawn Carrington", file: "dawn-carrington.png" },
+    { name: "Urban Gee Gadgets", file: "urban-gee-gadgets.png" },
   ];
 
   return (
-    <Section className="bg-white">
+    <Section className="bg-white text-black">
       <div className="text-xs uppercase tracking-[0.28em] text-blue-700">
         Clients & credibility
       </div>
@@ -27,22 +28,18 @@ export default function FootprintSection() {
         A snapshot of brands we’ve supported across campaigns, content and growth.
       </p>
 
-      {/* Logo strip (Dotts-style credibility block) */}
-      <div className="mt-10 space-y-4 overflow-hidden">
-        {[0, 1].map((row) => (
-          <div key={row} className="flex overflow-hidden">
-            <div className={`marquee ${row % 2 === 0 ? "" : "reverse"}`}>
-              {[...clients, ...clients].map((c, idx) => (
-                <div
-                  key={`${c}-${row}-${idx}`}
-                  className="shrink-0 rounded-full border border-white/10 bg-white/5 px-6 py-3"
-                >
-                  <div className="text-xs uppercase tracking-[0.22em] text-white/70 whitespace-nowrap">
-                    {c}
-                  </div>
-                </div>
-              ))}
-            </div>
+      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+        {logos.map((logo) => (
+          <div
+            key={logo.name}
+            className="flex h-24 items-center justify-center rounded-2xl border border-black/10 bg-white shadow-sm"
+          >
+            <img
+              src={`/logos/${logo.file}`}
+              alt={`${logo.name} logo`}
+              className="h-12 w-auto max-w-[140px] object-contain"
+              loading="lazy"
+            />
           </div>
         ))}
       </div>
