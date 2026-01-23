@@ -27,13 +27,18 @@ export default function AgencyIntro() {
           </div>
         </div>
         <div className="order-1 lg:order-2">
-          <div className="overflow-hidden rounded-3xl border border-black/10 bg-slate-50 shadow-sm">
-            <img
-              src="/agency-hero.jpg"
-              alt="Tek Media creative studio preview"
-              className="h-full w-full object-cover"
-              loading="lazy"
-            />
+          <div className="overflow-hidden rounded-3xl border border-black/10 bg-gradient-to-br from-white via-white to-blue-50 shadow-sm">
+            <div className="aspect-[4/3] w-full p-6 sm:p-8">
+              <picture>
+                <source srcSet="/agency-hero.jpg" type="image/jpeg" />
+                <img
+                  src="/agency-hero.svg"
+                  alt="Tek Media creative studio preview"
+                  className="h-full w-full object-contain"
+                  loading="lazy"
+                />
+              </picture>
+            </div>
           </div>
         </div>
       </div>
