@@ -4,7 +4,7 @@ export default function FootprintSection() {
   const logos = [
     { name: "Puexchange", file: "IMG_4501.PNG" },
     { name: "Casio Music MEA", file: "IMG_4502.PNG" },
-    { name: "Syinix", file: "IMG_4503.JPG" },
+    { name: "Syinix", file: "IMG_4503.JPG   " },
     { name: "Blue Circle", file: "IMG_4504.PNG" },
     { name: "Rhapsody's", file: "IMG_4505.PNG" },
     { name: "KAM Consulting", file: "IMG_4506.PNG" },
