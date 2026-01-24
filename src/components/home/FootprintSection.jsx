@@ -10,10 +10,10 @@ export default function FootprintSection() {
     { name: "KAM Consulting", file: "IMG_4506.PNG" },
     { name: "Catalyst Business Consult", file: "IMG_4507.PNG" },
     { name: "Slurp Juices", file: "IMG_4508.PNG" },
-    { name: "Dawn Carrington", file: "IMG_4509.PNG" },
+    { name: "Dawn Carrington Hotels and Suites", file: "IMG_4509.PNG" },
     { name: "Urban Gee Gadgets", file: "IMG_4510.PNG" },
-    { name: "Brand Partner", file: "IMG_4511.PNG" },
-    { name: "Royal Rest", file: "IMG_4513.PNG" },
+    { name: "Marvellous Performance", file: "IMG_4511.PNG" },
+    { name: "Royal Rest Mattress", file: "IMG_4513.PNG" },
   ];
   const shuffle = (items, seed) => {
     const list = [...items];
@@ -65,7 +65,7 @@ export default function FootprintSection() {
                   className="h-12 w-auto max-w-[140px] object-contain"
                   loading="lazy"
                 />
-                <span className="text-xs font-medium text-blue-700">
+                <span className="max-w-[140px] text-xs font-medium leading-snug text-blue-700">
                   {logo.name}
                 </span>
               </div>
