@@ -6,7 +6,7 @@ const caseStudies = [
     summary:
       "Trust-forward video production and event coverage for a leading alternative finance platform.",
     overview:
-      "Jeroid, a leading alternative financial services platform, set out to strengthen its brand presence with visual content that matched the trust and clarity required in the financial space. Tek Media produced professional commercial video assets and event coverage, handling pre-production, filming, and post-production to deliver content ready for digital campaigns and brand touchpoints.",
+      "Jeroid, a leading alternative financial services platform, set out to strengthen its brand presence with visual content that matched the trust and clarity required in the financial space. Tek Media was engaged to produce professional commercial video assets and event coverage that could support Jeroid’s growing visibility across digital platforms and brand touchpoints. This work involved end-to-end videography execution, from pre-production planning to on-ground filming and post-production delivery, ensuring every asset aligned with the brand’s positioning and audience expectations. The final content was developed for seamless use across online campaigns, social media, and key brand moments.",
     highlights: [
       "Delivered end-to-end commercial videography aligned to financial brand positioning.",
       "Captured event moments and highlights for brand visibility across digital platforms.",
@@ -27,7 +27,7 @@ const caseStudies = [
     summary:
       "Structured social management and content planning for a freshness-first lifestyle brand.",
     overview:
-      "Slurp Juices and Smoothies is built around freshness, flavour, and a clear health-forward lifestyle. Tek Media managed Slurp’s social media presence with consistent planning, platform execution, and growth-focused optimisation to keep the brand active, recognisable, and connected to its community.",
+      "Slurp Juices and Smoothies is built around freshness, flavour, and a clear health-forward lifestyle. To support that positioning online, Tek Media managed Slurp’s social media presence with a focus on consistency, audience engagement, and content that matched the brand’s energy. Our work centred on structured social media management, combining clear planning, platform execution, and growth-focused optimisation to ensure the brand stayed active, recognisable, and connected to its community. The result was a stronger digital presence designed to keep Slurp top-of-mind and relevant across key social channels.",
     highlights: [
       "Built a structured social media management cadence for ongoing consistency.",
       "Aligned content with brand energy and audience engagement goals.",
@@ -48,7 +48,7 @@ const caseStudies = [
     summary:
       "Campaign-ready video assets for a fast, secure, and credible finance platform.",
     overview:
-      "PU Exchange is designed for people and businesses that need financial transactions to feel fast, secure, and straightforward. Tek Media produced commercial video assets that presented PU Exchange’s services with the clarity and professionalism expected in digital finance, delivering campaign-ready visuals for social and promotional use.",
+      "PU Exchange is designed for people and businesses that need financial transactions to feel fast, secure, and straightforward. In a space where trust is everything, the brand’s visual communication has to be clear, professional, and credible at first glance. Tek Media produced commercial video assets that presented PU Exchange’s services with the tone and precision expected in digital finance. The final content was developed for campaign use across social platforms and other key promotional channels.",
     highlights: [
       "Delivered commercial video production aligned to a trust-first fintech tone.",
       "Created polished edits for campaign use across social and digital channels.",
@@ -69,7 +69,7 @@ const caseStudies = [
     summary:
       "Premium product-focused visuals for a leading African home appliance brand.",
     overview:
-      "Syinix builds home appliances for African households that value quality, function, and modern living. Tek Media produced commercial videography that showcased Syinix products with the premium detail and clarity expected from a market leader, delivering assets for campaign use across digital platforms.",
+      "Syinix builds home appliances for African households that value quality, function, and modern living. For a brand operating at that scale, the visuals matter. Product communication needs to feel premium, clear, and trustworthy. Tek Media produced commercial videography that showcased Syinix products with the level of detail, finish, and consistency expected from a market leader. The final assets were created for campaign use across digital platforms and brand channels, supporting both visibility and product confidence.",
     highlights: [
       "Delivered product-focused visual production with premium presentation.",
       "Maintained clear, consistent styling across product shots and edits.",

@@ -8,6 +8,7 @@ import About from "../pages/About.jsx";
 import Teams from "../pages/Teams.jsx";
 import People from "../pages/People.jsx";
 import CaseStudy from "../pages/CaseStudy.jsx";
+import OurWork from "../pages/OurWork.jsx";
 
 export const routes = [
   {
@@ -17,6 +18,7 @@ export const routes = [
       { path: "/blog", element: <Blog /> },
       { path: "/blog/:slug", element: <BlogPost /> },
       { path: "/case-studies/:slug", element: <CaseStudy /> },
+      { path: "/work", element: <OurWork /> },
       { path: "/contact", element: <Contact /> },
       { path: "/careers", element: <Careers /> },
       { path: "/teams", element: <Teams /> },
