@@ -26,7 +26,7 @@ export default function CaseStudies() {
         </div>
 
         <Link
-          to="/about"
+          to="/work"
           className="text-xs uppercase tracking-[0.18em] text-blue-700 hover:text-blue-800 transition-colors"
         >
           View All Work
