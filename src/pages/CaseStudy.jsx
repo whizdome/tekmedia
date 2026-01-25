@@ -61,58 +61,80 @@ export default function CaseStudy() {
                 ))}
               </ul>
             </div>
-            <div className="grid gap-4">
-              {study.stats.map((stat) => (
-                <div
-                  key={stat.label}
-                  className="rounded-2xl border border-black/10 bg-slate-50 p-5"
-                >
-                  <div className="text-2xl font-semibold text-black">
-                    {stat.value}
+            {study.stats.length > 0 ? (
+              <div className="grid gap-4">
+                {study.stats.map((stat) => (
+                  <div
+                    key={stat.label}
+                    className="rounded-2xl border border-black/10 bg-slate-50 p-5"
+                  >
+                    <div className="text-2xl font-semibold text-black">
+                      {stat.value}
+                    </div>
+                    <div className="mt-1 text-xs uppercase tracking-[0.24em] text-black/60">
+                      {stat.label}
+                    </div>
                   </div>
-                  <div className="mt-1 text-xs uppercase tracking-[0.24em] text-black/60">
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            ) : (
+              <div className="rounded-2xl border border-black/10 bg-slate-50 p-6 text-black/60">
+                Impact metrics will be added with the final campaign reporting.
+              </div>
+            )}
           </div>
         </Container>
       </section>
 
-      <section className="bg-slate-50">
-        <Container className="py-12 md:py-16">
-          <div className="grid gap-8 lg:grid-cols-[1fr_1fr] items-center">
-            <div>
-              <div className="text-xs uppercase tracking-[0.28em] text-blue-700">
-                Campaign video
+      {study.videoUrl ? (
+        <section className="bg-slate-50">
+          <Container className="py-12 md:py-16">
+            <div className="grid gap-8 lg:grid-cols-[1fr_1fr] items-center">
+              <div>
+                <div className="text-xs uppercase tracking-[0.28em] text-blue-700">
+                  Campaign video
+                </div>
+                <h2 className="mt-4 text-2xl md:text-3xl font-semibold text-black">
+                  Watch the launch story
+                </h2>
+                <p className="mt-4 text-black/70 leading-relaxed">
+                  A highlight reel of the brand activation and content rollout
+                  across channels.
+                </p>
               </div>
-              <h2 className="mt-4 text-2xl md:text-3xl font-semibold text-black">
-                Watch the launch story
-              </h2>
-              <p className="mt-4 text-black/70 leading-relaxed">
-                A highlight reel of the brand activation and content rollout
-                across channels.
-              </p>
+              <div className="aspect-video overflow-hidden rounded-2xl border border-black/10 bg-black shadow-sm">
+                <iframe
+                  title={`${study.title} video`}
+                  src={study.videoUrl}
+                  className="h-full w-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
             </div>
-            <div className="aspect-video overflow-hidden rounded-2xl border border-black/10 bg-black shadow-sm">
-              <iframe
-                title={`${study.title} video`}
-                src={study.videoUrl}
-                className="h-full w-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+            <Link
+              to="/"
+              className="mt-10 inline-flex text-blue-600 underline underline-offset-4"
+            >
+              Back to home
+            </Link>
+          </Container>
+        </section>
+      ) : (
+        <section className="bg-slate-50">
+          <Container className="py-12 md:py-16">
+            <div className="rounded-2xl border border-black/10 bg-white p-8 text-black/70">
+              Campaign video content will be added after final delivery.
             </div>
-          </div>
-          <Link
-            to="/"
-            className="mt-10 inline-flex text-blue-600 underline underline-offset-4"
-          >
-            Back to home
-          </Link>
-        </Container>
-      </section>
+            <Link
+              to="/"
+              className="mt-10 inline-flex text-blue-600 underline underline-offset-4"
+            >
+              Back to home
+            </Link>
+          </Container>
+        </section>
+      )}
     </>
   );
 }

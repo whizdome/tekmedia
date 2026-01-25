@@ -1,83 +1,87 @@
 const caseStudies = [
   {
-    slug: "pulse-retail-growth",
-    title: "Pulse Retail Growth Sprint",
-    category: "Performance Media",
-    summary: "Always-on media and CRM automation for eCommerce scale.",
+    slug: "jeroid",
+    title: "Jeroid",
+    category: "Commercial Videography",
+    summary:
+      "Trust-forward video production and event coverage for a leading alternative finance platform.",
     overview:
-      "Pulse Retail partnered with Tek Media to rebuild their acquisition funnel and improve repeat purchase rates across seasonal launches.",
+      "Jeroid, a leading alternative financial services platform, set out to strengthen its brand presence with visual content that matched the trust and clarity required in the financial space. Tek Media produced professional commercial video assets and event coverage, handling pre-production, filming, and post-production to deliver content ready for digital campaigns and brand touchpoints.",
     highlights: [
-      "Rebuilt paid social and search structure with ROAS-focused creative testing.",
-      "Implemented lifecycle email automation for cart recovery and repeat buyers.",
-      "Unified analytics dashboards for weekly performance optimization.",
+      "Delivered end-to-end commercial videography aligned to financial brand positioning.",
+      "Captured event moments and highlights for brand visibility across digital platforms.",
+      "Prepared final edits for campaigns, social media, and key brand moments.",
     ],
-    services: ["Performance Marketing", "CRM Automation", "Creative Testing"],
-    stats: [
-      { label: "ROAS lift", value: "38%" },
-      { label: "Repeat purchase", value: "+24%" },
-      { label: "CPA reduction", value: "19%" },
+    services: [
+      "Commercial Videography",
+      "Event Coverage and Highlights",
+      "Post-Production Editing",
     ],
-    videoUrl: "https://www.youtube-nocookie.com/embed/ysz5S6PUM-U",
+    stats: [],
+    videoUrl: "",
   },
   {
-    slug: "nova-fintech-rebrand",
-    title: "Nova Fintech Trust Builder",
-    category: "Brand Strategy",
-    summary: "New visual identity and UX refresh for a digital bank.",
+    slug: "slurp-juices",
+    title: "Slurp Juices",
+    category: "Social Media Management",
+    summary:
+      "Structured social management and content planning for a freshness-first lifestyle brand.",
     overview:
-      "Nova Fintech needed a rebrand that communicated trust and clarity while helping their product team ship a refined onboarding flow.",
+      "Slurp Juices and Smoothies is built around freshness, flavour, and a clear health-forward lifestyle. Tek Media managed Slurp’s social media presence with consistent planning, platform execution, and growth-focused optimisation to keep the brand active, recognisable, and connected to its community.",
     highlights: [
-      "Developed a trust-first positioning and tone of voice guide.",
-      "Redesigned onboarding flows to improve KYC completion rates.",
-      "Created a flexible design system for product and marketing teams.",
+      "Built a structured social media management cadence for ongoing consistency.",
+      "Aligned content with brand energy and audience engagement goals.",
+      "Optimised platform execution for sustained visibility across channels.",
     ],
-    services: ["Brand Strategy", "Product Design", "Design Systems"],
-    stats: [
-      { label: "KYC completion", value: "+29%" },
-      { label: "App rating", value: "4.8★" },
-      { label: "Time to value", value: "-18%" },
+    services: [
+      "Social Media Management",
+      "Social Media Growth Strategy",
+      "Content Planning and Optimisation",
     ],
-    videoUrl: "https://www.youtube-nocookie.com/embed/ScMzIvxBSi4",
+    stats: [],
+    videoUrl: "",
   },
   {
-    slug: "afrobeat-global-launch",
-    title: "Afrobeat Global Launch",
-    category: "Brand Campaign",
-    summary: "Multi-market rollout for a new music platform.",
+    slug: "pu-exchange",
+    title: "PU Exchange",
+    category: "Commercial Videography",
+    summary:
+      "Campaign-ready video assets for a fast, secure, and credible finance platform.",
     overview:
-      "We partnered with an emerging Afrobeat platform to launch across Africa, Europe, and North America with a culture-first campaign.",
+      "PU Exchange is designed for people and businesses that need financial transactions to feel fast, secure, and straightforward. Tek Media produced commercial video assets that presented PU Exchange’s services with the clarity and professionalism expected in digital finance, delivering campaign-ready visuals for social and promotional use.",
     highlights: [
-      "Crafted a creator-led launch strategy with 40+ artist collaborations.",
-      "Produced a modular content system for cross-platform rollouts.",
-      "Built experiential activations tied to live events and streaming drops.",
+      "Delivered commercial video production aligned to a trust-first fintech tone.",
+      "Created polished edits for campaign use across social and digital channels.",
+      "Maintained brand precision throughout production and post-production.",
     ],
-    services: ["Campaign Strategy", "Content Production", "Partnerships"],
-    stats: [
-      { label: "Markets launched", value: "18" },
-      { label: "Creator partners", value: "40+" },
-      { label: "Streaming lift", value: "+31%" },
+    services: [
+      "Commercial Videography",
+      "Production and Post-Editing",
+      "Campaign-Ready Video Assets",
     ],
-    videoUrl: "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ",
+    stats: [],
+    videoUrl: "",
   },
   {
-    slug: "culture-first-lifestyle",
-    title: "Culture-First Lifestyle Brand",
-    category: "Integrated Campaign",
-    summary: "Social storytelling and experiential brand activations.",
+    slug: "syinix",
+    title: "Syinix",
+    category: "Product Videography",
+    summary:
+      "Premium product-focused visuals for a leading African home appliance brand.",
     overview:
-      "A lifestyle brand needed a fresh cultural entry. We built a story-first campaign that blended social, influencer, and retail moments.",
+      "Syinix builds home appliances for African households that value quality, function, and modern living. Tek Media produced commercial videography that showcased Syinix products with the premium detail and clarity expected from a market leader, delivering assets for campaign use across digital platforms.",
     highlights: [
-      "Launched a community-led ambassador program in key cities.",
-      "Designed pop-up retail moments with shareable installations.",
-      "Connected social storytelling to weekly product drops.",
+      "Delivered product-focused visual production with premium presentation.",
+      "Maintained clear, consistent styling across product shots and edits.",
+      "Prepared final assets for multi-channel campaign deployment.",
     ],
-    services: ["Integrated Campaigns", "Experiential", "Influencer Strategy"],
-    stats: [
-      { label: "Community signups", value: "12k" },
-      { label: "Engagement rate", value: "6.4%" },
-      { label: "Retail lift", value: "+17%" },
+    services: [
+      "Commercial Videography",
+      "Product-Focused Visual Production",
+      "Post-Production and Final Delivery",
     ],
-    videoUrl: "https://www.youtube-nocookie.com/embed/aqz-KE-bpKQ",
+    stats: [],
+    videoUrl: "",
   },
 ];
 
