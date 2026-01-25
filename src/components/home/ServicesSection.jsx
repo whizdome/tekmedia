@@ -44,21 +44,21 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <Section className="bg-white text-black">
+    <Section className="bg-blue-100/80 text-black">
       <div className="grid gap-12 lg:grid-cols-[1.1fr_2fr]">
         <div>
-          <div className="text-xs uppercase tracking-[0.28em] text-blue-700">
+          <div className="text-xs uppercase tracking-[0.28em] text-blue-900">
             Services
           </div>
-          <h2 className="mt-4 text-3xl md:text-4xl font-semibold max-w-md leading-tight text-black">
+          <h2 className="mt-4 text-3xl md:text-4xl font-semibold max-w-md leading-tight text-blue-950">
             An overview of what we do
           </h2>
-          <p className="mt-6 text-base md:text-lg text-black/70 leading-relaxed">
+          <p className="mt-6 text-base md:text-lg text-blue-950/80 leading-relaxed">
             With experience across videography, content creation, social media
             management, and marketing, Tek Media delivers creative services
             built for modern brand communication.
           </p>
-          <p className="mt-4 text-base md:text-lg text-black/70 leading-relaxed">
+          <p className="mt-4 text-base md:text-lg text-blue-950/80 leading-relaxed">
             We work closely with brands to execute focused creative solutions
             shaped by clear objectives, audience relevance, and consistency
             across platforms.
@@ -69,12 +69,12 @@ export default function ServicesSection() {
           {services.map((s) => (
             <div
               key={s.title}
-              className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm"
+              className="rounded-2xl border border-blue-200 bg-white p-6 shadow-sm shadow-blue-200/60"
             >
-              <h3 className="text-sm uppercase tracking-[0.22em] font-semibold text-black">
+              <h3 className="text-sm uppercase tracking-[0.22em] font-semibold text-blue-950">
                 {s.title}
               </h3>
-              <ul className="mt-4 space-y-2 text-sm md:text-base text-black/70 list-disc list-inside">
+              <ul className="mt-4 space-y-2 text-sm md:text-base text-blue-950/80 list-disc list-inside marker:text-blue-700">
                 {s.items.map((it) => (
                   <li key={it} className="leading-relaxed">
                     {it}
