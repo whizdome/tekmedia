@@ -33,7 +33,7 @@ export default function Contact() {
                   Email
                 </div>
                 <a
-                  href="mailto:info@tekmedia.com"
+                  href="mailto:info@tekmediang.com"
                   className="text-blue-600 hover:text-blue-700 underline"
                 >
                   info@tekmedia.com
@@ -41,11 +41,22 @@ export default function Contact() {
               </div>
               <div>
                 <div className="text-xs uppercase tracking-[0.28em] text-black/60 mb-1">
+                  Phone
+                </div>
+                <a
+                  href="tel:+2347066389437"
+                  className="text-blue-600 hover:text-blue-700 underline"
+                >
+                  +234(0)7066389437
+                </a>
+              </div>
+              <div>
+                <div className="text-xs uppercase tracking-[0.28em] text-black/60 mb-1">
                   Location
                 </div>
                 <p className="text-black/70">
-                  The Ford Centre, Plot 2, Block 94, Providence Street, Lekki
-                  Phase 1, Eti-Osa, Lekki.
+                  Ewu Elepe, Amazing Grace Plaza, Itagama, beside Taramed Filling Station, Ijede Road Ijede, Ikorodu  <br></br> 104102, <br></br>
+                Lagos, Nigeria
                 </p>
               </div>
             </div>
