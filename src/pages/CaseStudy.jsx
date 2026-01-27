@@ -8,6 +8,7 @@ export default function CaseStudy() {
   const study = caseStudies.find((item) => item.slug === slug);
   const gallery = useMemo(() => study?.gallery ?? [], [study]);
   const [galleryIndex, setGalleryIndex] = useState(0);
+  const [lightboxImage, setLightboxImage] = useState("");
   const hasGallery = gallery.length > 0;
   const hasMultipleImages = gallery.length > 1;
 
@@ -101,12 +102,19 @@ export default function CaseStudy() {
           {hasGallery ? (
             <div className="mt-8 rounded-2xl border border-black/10 bg-white p-6 shadow-sm">
               <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-black/10 bg-slate-50">
-                <img
-                  src={gallery[galleryIndex]}
-                  alt={`${study.title} gallery ${galleryIndex + 1}`}
-                  className="h-full w-full object-cover"
-                  loading="lazy"
-                />
+                <button
+                  type="button"
+                  onClick={() => setLightboxImage(gallery[galleryIndex])}
+                  className="h-full w-full"
+                  aria-label="Open image"
+                >
+                  <img
+                    src={gallery[galleryIndex]}
+                    alt={`${study.title} gallery ${galleryIndex + 1}`}
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                </button>
                 {hasMultipleImages ? (
                   <>
                     <button
@@ -153,6 +161,31 @@ export default function CaseStudy() {
           </Link>
         </Container>
       </section>
+      {lightboxImage ? (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-6">
+          <button
+            type="button"
+            onClick={() => setLightboxImage("")}
+            className="absolute inset-0 h-full w-full cursor-default"
+            aria-label="Close image"
+          />
+          <div className="relative w-full max-w-5xl">
+            <button
+              type="button"
+              onClick={() => setLightboxImage("")}
+              className="absolute -top-10 right-0 text-white/80 hover:text-white"
+              aria-label="Close"
+            >
+              ✕
+            </button>
+            <img
+              src={lightboxImage}
+              alt="Expanded campaign still"
+              className="max-h-[80vh] w-full rounded-2xl object-contain shadow-2xl"
+            />
+          </div>
+        </div>
+      ) : null}
     </>
   );
 }
