@@ -22,20 +22,34 @@ export default function OurWork() {
             <Link
               key={study.slug}
               to={`/case-studies/${study.slug}`}
-              className="group rounded-2xl border border-black/10 bg-white p-6 shadow-sm transition-transform hover:-translate-y-1 hover:shadow-md"
+              className="group overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm transition-transform hover:-translate-y-1 hover:shadow-md"
             >
-              <div className="text-xs uppercase tracking-[0.2em] text-blue-700">
-                {study.category}
+              <div className="relative aspect-[4/3] bg-blue-50">
+                {study.coverImage ? (
+                  <img
+                    src={study.coverImage}
+                    alt={`${study.title} cover`}
+                    className="absolute inset-0 h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-blue-100/40" />
+                )}
               </div>
-              <h2 className="mt-3 text-xl font-semibold text-black">
-                {study.title}
-              </h2>
-              <p className="mt-4 text-sm text-black/70 leading-relaxed">
-                {study.summary}
-              </p>
-              <span className="mt-6 inline-flex text-sm font-semibold text-blue-700">
-                View case study
-              </span>
+              <div className="p-6">
+                <div className="text-xs uppercase tracking-[0.2em] text-blue-700">
+                  {study.category}
+                </div>
+                <h2 className="mt-3 text-xl font-semibold text-black">
+                  {study.title}
+                </h2>
+                <p className="mt-4 text-sm text-black/70 leading-relaxed">
+                  {study.summary}
+                </p>
+                <span className="mt-6 inline-flex text-sm font-semibold text-blue-700">
+                  View case study
+                </span>
+              </div>
             </Link>
           ))}
         </div>
