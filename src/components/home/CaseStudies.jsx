@@ -24,14 +24,6 @@ export default function CaseStudies() {
             Case Studies
           </h2>
         </div>
-
-        <Link
-          to="/work"
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="text-xs uppercase tracking-[0.18em] text-blue-700 hover:text-blue-800 transition-colors"
-        >
-          View All Work
-        </Link>
       </div>
 
       <div className="flex gap-6 overflow-x-auto pb-2 hide-scrollbar">
@@ -82,6 +74,13 @@ export default function CaseStudies() {
           />
         ))}
       </div>
+      <Link
+        to="/work"
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        className="mt-6 inline-flex rounded-full border border-blue-600 px-5 py-2 text-xs uppercase tracking-[0.24em] text-blue-700 transition hover:bg-blue-50"
+      >
+        View All Work
+      </Link>
     </Section>
   );
 }
