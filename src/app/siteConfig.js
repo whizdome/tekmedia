@@ -1,16 +1,24 @@
 export const siteConfig = {
   footer: {
     city: "LAGOS",
-    address:
-      "The Ford Centre, Plot 2, Block 94, Providence Street, Lekki Phase 1, Eti-Osa, Lekki.",
+    address: "Lagos, Nigeria",
     mapLink: "#",
-    email: "info@tekmedia.com",
-    phone: "+234 (0) 912 345 6789",
+    email: "info@tekmediang.com",
+    phone: "+234(0)7066389437",
     hours: "Mon–Fri · 9am–6pm",
     social: [
-      { label: "Twitter", href: "#" },
-      { label: "Instagram", href: "#" },
-      { label: "TikTok", href: "#" },
+      {
+        label: "Facebook",
+        href: "https://www.facebook.com/share/18CESJSVFS/?mibextid=wwXIfr",
+      },
+      {
+        label: "Instagram",
+        href: "https://www.instagram.com/tekmedia_ng?igsh=b213bDMwNWs2cHpz&utm_source=qr",
+      },
+      {
+        label: "TikTok",
+        href: "https://www.tiktok.com/@tekmedia.ng?_r=1&_t=ZS-93Q7yKqmsA4",
+      },
     ],
   },
 };

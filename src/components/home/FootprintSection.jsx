@@ -53,19 +53,19 @@ export default function FootprintSection() {
             className={`marquee gap-6 ${rowIndex % 2 === 1 ? "reverse" : ""}`}
           >
             {[...row, ...row].map((logo, index) => (
-              <div
-                key={`${logo.name}-${rowIndex}-${index}`}
-                className="flex h-24 w-[180px] items-center justify-center rounded-2xl border border-black/10 bg-white shadow-sm"
-                aria-hidden={index >= row.length}
-              >
-              <div className="flex flex-col items-center gap-2 text-center">
+            <div
+              key={`${logo.name}-${rowIndex}-${index}`}
+              className="group flex h-24 w-[180px] items-center justify-center rounded-2xl border border-black/10 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"
+              aria-hidden={index >= row.length}
+            >
+              <div className="flex flex-col items-center gap-2 text-center transition duration-300 group-hover:scale-[1.02]">
                 <img
                   src={`/logos/${logo.file}`}
                   alt={`${logo.name} logo`}
                   className="h-12 w-auto max-w-[140px] object-contain"
                   loading="lazy"
                 />
-                <span className="max-w-[140px] text-xs font-medium leading-snug text-blue-700">
+                <span className="max-w-[140px] text-xs font-medium leading-snug text-blue-700 transition group-hover:text-blue-800">
                   {logo.name}
                 </span>
               </div>

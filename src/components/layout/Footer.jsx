@@ -58,14 +58,14 @@ export default function Footer() {
                   className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white text-black/70 transition hover:text-blue-700"
                   aria-label={s.label}
                 >
-                  {s.label === "Twitter" ? (
+                  {s.label === "Facebook" ? (
                     <svg
                       aria-hidden="true"
                       viewBox="0 0 24 24"
                       className="h-5 w-5"
                       fill="currentColor"
                     >
-                      <path d="M20.94 6.34c.02.18.02.36.02.55 0 5.6-4.26 12.06-12.06 12.06-2.39 0-4.62-.7-6.5-1.9.34.04.68.06 1.03.06 1.98 0 3.8-.67 5.25-1.79a4.25 4.25 0 0 1-3.96-2.95c.26.04.52.06.8.06.38 0 .76-.06 1.11-.14a4.24 4.24 0 0 1-3.4-4.16v-.05c.57.32 1.22.52 1.92.54A4.24 4.24 0 0 1 3.1 4.9a12.06 12.06 0 0 0 8.75 4.44 4.78 4.78 0 0 1-.11-.97 4.24 4.24 0 0 1 7.34-2.9 8.4 8.4 0 0 0 2.69-1.02 4.21 4.21 0 0 1-1.87 2.34 8.45 8.45 0 0 0 2.44-.67 9.2 9.2 0 0 1-2.1 2.17Z" />
+                      <path d="M13.5 8.5V7.2c0-.8.5-1.2 1.2-1.2h1.3V3.2h-2c-2.2 0-3.5 1.4-3.5 3.6v1.7H8.2V11h2.3v7.8h3V11h2.4l.4-2.5h-2.8Z" />
                     </svg>
                   ) : null}
                   {s.label === "Instagram" ? (

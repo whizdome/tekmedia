@@ -83,11 +83,11 @@ const caseStudies = [
     videoUrl: "https://www.instagram.com/reel/C7d-gWcNxW0/embed",
     videoAspect: "portrait",
     gallery: [
-      "/pu_exchange/pu_exchange_001.jpg",
-      "/pu_exchange/pu_exchange_002.jpg",
-      "/pu_exchange/pu_exchange_003.jpg",
-      "/pu_exchange/pu_exchange_004.jpg",
-      "/pu_exchange/pu_exchange_005.jpg",
+      "/pu_exchange/pu_exchange_01.jpg",
+      "/pu_exchange/pu_exchange_02.jpg",
+      "/pu_exchange/pu_exchange_03.jpg",
+      "/pu_exchange/pu_exchange_04.jpg",
+      "/pu_exchange/pu_exchange_05.jpg",
     ],
   },
   {
@@ -96,7 +96,7 @@ const caseStudies = [
     category: "Product Videography",
     summary:
       "Premium product-focused visuals for a leading African home appliance brand.",
-    coverImage: "/syinix/cover.jpeg",
+    coverImage: "/syinix/cover.PNG",
     overview:
       "Syinix builds home appliances for African households that value quality, function, and modern living. For a brand operating at that scale, the visuals matter. Product communication needs to feel premium, clear, and trustworthy. Tek Media produced commercial videography that showcased Syinix products with the level of detail, finish, and consistency expected from a market leader. The final assets were created for campaign use across digital platforms and brand channels, supporting both visibility and product confidence.",
     highlights: [
