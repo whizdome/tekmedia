@@ -1,32 +1,62 @@
 import Section from "../ui/Section.jsx";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const testimonials = [
   {
     quote:
-      "Tek Media brought clarity to our positioning and delivered a campaign that moved the market in weeks, not months.",
-    author: "Sarah Johnson",
-    role: "CMO, Elevate Fintech",
-    company: "Elevate Fintech",
+      "Tek Media is one of the few teams I’ve worked with that actually listens before shooting anything. The final video was clean, intentional, and very on-brand.",
+    author: "Chidera Okonkwo",
+    role: "Client",
+    company: "Client",
   },
   {
     quote:
-      "Their team felt like a true extension of ours—strategic, fast, and deeply creative at every touchpoint.",
-    author: "Michael Chen",
-    role: "Marketing Director, Pulse Retail",
-    company: "Pulse Retail",
+      "The team was professional from planning through delivery. Timelines were respected, communication was efficient, and the final deliverables met expectations.",
+    author: "Kunle Adegbite",
+    role: "Client",
+    company: "Client",
   },
   {
     quote:
-      "We saw immediate lift across brand sentiment and conversion. The work was bold, polished, and measurable.",
-    author: "Emily Rodriguez",
-    role: "VP of Marketing, Nova Mobility",
-    company: "Nova Mobility",
+      "We needed commercial content that didn’t feel rushed or random. Tek delivered with structure. Everything looked premium from start to finish. I strongly recommend.",
+    author: "Tobi Akinyemi",
+    role: "Client",
+    company: "Client",
+  },
+  {
+    quote:
+      "Working with Tek Media was seamless. Deliverables were handled with professionalism, and the final production quality was impressive.",
+    author: "Akin Fashola",
+    role: "Client",
+    company: "Client",
+  },
+  {
+    quote:
+      "Tek Media brought consistency to our digital presence. Their approach is organised, measured, and focused on long-term quality.",
+    author: "Blessing Okafor",
+    role: "Client",
+    company: "Client",
+  },
+  {
+    quote:
+      "What we appreciated most was the attention to detail and the discipline in execution. The work was clean, purposeful, and on-brand.",
+    author: "Hauwa Ibrahim",
+    role: "Client",
+    company: "Client",
+  },
+  {
+    quote:
+      "They operate with a level of clarity that makes collaboration easy. The output reflected both creative strength and operational discipline.",
+    author: "Mariam Sule",
+    role: "Client",
+    company: "Client",
   },
 ];
 
 export default function Testimonials() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const startX = useRef(0);
+  const deltaX = useRef(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -35,18 +65,45 @@ export default function Testimonials() {
     return () => clearInterval(interval);
   }, []);
 
+  const handleTouchStart = (event) => {
+    startX.current = event.touches[0].clientX;
+    deltaX.current = 0;
+  };
+
+  const handleTouchMove = (event) => {
+    deltaX.current = event.touches[0].clientX - startX.current;
+  };
+
+  const handleTouchEnd = () => {
+    if (Math.abs(deltaX.current) < 40) {
+      return;
+    }
+    if (deltaX.current < 0) {
+      setActiveIndex((prev) => (prev + 1) % testimonials.length);
+    } else {
+      setActiveIndex((prev) =>
+        prev === 0 ? testimonials.length - 1 : prev - 1
+      );
+    }
+  };
+
   return (
-    <Section>
-      <div className="text-xs uppercase tracking-[0.28em] text-white/60">
+    <Section id="feedback" className="bg-white text-black">
+      <div className="text-xs uppercase tracking-[0.28em] text-blue-700">
         Client feedback
       </div>
 
-      <h2 className="mt-4 text-2xl md:text-3xl font-semibold text-white">
+      <h2 className="mt-4 text-2xl md:text-3xl font-semibold text-black">
         Trusted by teams who value bold results.
       </h2>
 
       <div className="mt-10 max-w-4xl">
-        <div className="relative overflow-hidden">
+        <div
+          className="relative overflow-hidden"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
           <div
             className="flex transition-transform duration-500"
             style={{ transform: `translateX(-${activeIndex * 100}%)` }}
@@ -72,17 +129,17 @@ export default function Testimonials() {
             ))}
           </div>
         </div>
-        <div className="slider-dots">
-          {testimonials.map((_, idx) => (
-            <button
-              key={idx}
-              type="button"
-              onClick={() => setActiveIndex(idx)}
-              className={`slider-dot ${idx === activeIndex ? "active" : ""}`}
-              aria-label={`Go to testimonial ${idx + 1}`}
-            />
-          ))}
-        </div>
+      <div className="slider-dots">
+        {testimonials.map((_, idx) => (
+          <button
+            key={idx}
+            type="button"
+            onClick={() => setActiveIndex(idx)}
+            className={`slider-dot ${idx === activeIndex ? "active" : ""}`}
+            aria-label={`Go to testimonial ${idx + 1}`}
+          />
+        ))}
+      </div>
       </div>
     </Section>
   );
