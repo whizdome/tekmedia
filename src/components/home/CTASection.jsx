@@ -19,12 +19,18 @@ export default function CTASection() {
             </p>
             <Link
               to="/contact"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               className="mt-6 inline-flex rounded-full bg-blue-600 px-6 py-3 text-xs uppercase tracking-[0.24em] text-white hover:bg-blue-700 transition-colors"
             >
               Contact Tek Media
             </Link>
           </div>
-          <form className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm">
+          <form
+            className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm"
+            action="mailto:info@tekmediang.com"
+            method="post"
+            encType="text/plain"
+          >
             <div className="text-xs uppercase tracking-[0.28em] text-black/60">
               Contact us
             </div>
@@ -35,6 +41,7 @@ export default function CTASection() {
                 </label>
                 <input
                   type="text"
+                  name="name"
                   placeholder="Your name"
                   className="mt-2 w-full rounded-xl border border-black/10 px-4 py-3 text-sm text-black placeholder:text-black/40 focus:border-blue-500 focus:outline-none"
                 />
@@ -45,6 +52,7 @@ export default function CTASection() {
                 </label>
                 <input
                   type="email"
+                  name="email"
                   placeholder="you@email.com"
                   className="mt-2 w-full rounded-xl border border-black/10 px-4 py-3 text-sm text-black placeholder:text-black/40 focus:border-blue-500 focus:outline-none"
                 />
@@ -55,12 +63,13 @@ export default function CTASection() {
                 </label>
                 <textarea
                   rows="3"
+                  name="project"
                   placeholder="Tell us about your project"
                   className="mt-2 w-full rounded-xl border border-black/10 px-4 py-3 text-sm text-black placeholder:text-black/40 focus:border-blue-500 focus:outline-none"
                 />
               </div>
               <button
-                type="button"
+                type="submit"
                 className="w-full rounded-full bg-blue-600 px-5 py-3 text-xs uppercase tracking-[0.24em] text-white hover:bg-blue-700 transition-colors"
               >
                 Send message
@@ -68,19 +77,6 @@ export default function CTASection() {
             </div>
           </form>
         </div>
-        <div className="mt-4 text-2xl md:text-3xl font-semibold leading-tight text-white">
-          Let’s build something unforgettable together.
-        </div>
-        <p className="mt-4 text-sm text-white/70 leading-relaxed">
-          Tell us about your next launch, expansion, or rebrand and we’ll map out
-          the fastest path to impact.
-        </p>
-        <Link
-          to="/contact"
-          className="mt-8 inline-flex rounded-full border border-white/20 px-6 py-3 text-xs uppercase tracking-[0.24em] text-white hover:bg-white hover:text-[#0a0a0a] transition-colors"
-        >
-          Contact Tek Media
-        </Link>
       </div>
     </Section>
   );
