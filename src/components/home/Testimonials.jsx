@@ -64,7 +64,7 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <Section className="bg-white text-black">
+    <Section id="feedback" className="bg-white text-black">
       <div className="text-xs uppercase tracking-[0.28em] text-blue-700">
         Client feedback
       </div>

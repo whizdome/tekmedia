@@ -66,7 +66,7 @@ const caseStudies = [
     category: "Commercial Videography",
     summary:
       "Campaign-ready video assets for a fast, secure, and credible finance platform.",
-    coverImage: "",
+    coverImage: "/pu_exchange/cover.jpg",
     overview:
       "PU Exchange is designed for people and businesses that need financial transactions to feel fast, secure, and straightforward. In a space where trust is everything, the brand’s visual communication has to be clear, professional, and credible at first glance. Tek Media produced commercial video assets that presented PU Exchange’s services with the tone and precision expected in digital finance. The final content was developed for campaign use across social platforms and other key promotional channels.",
     highlights: [
@@ -80,8 +80,15 @@ const caseStudies = [
       "Campaign-Ready Video Assets",
     ],
     stats: [],
-    videoUrl: "",
-    gallery: [],
+    videoUrl: "https://www.instagram.com/reel/C7d-gWcNxW0/embed",
+    videoAspect: "portrait",
+    gallery: [
+      "/pu_exchange/pu_exchange_01.jpg",
+      "/pu_exchange/pu_exchange_02.jpg",
+      "/pu_exchange/pu_exchange_03.jpg",
+      "/pu_exchange/pu_exchange_04.jpg",
+      "/pu_exchange/pu_exchange_05.jpg",
+    ],
   },
   {
     slug: "syinix",
@@ -89,7 +96,7 @@ const caseStudies = [
     category: "Product Videography",
     summary:
       "Premium product-focused visuals for a leading African home appliance brand.",
-    coverImage: "",
+    coverImage: "/syinix/cover.PNG",
     overview:
       "Syinix builds home appliances for African households that value quality, function, and modern living. For a brand operating at that scale, the visuals matter. Product communication needs to feel premium, clear, and trustworthy. Tek Media produced commercial videography that showcased Syinix products with the level of detail, finish, and consistency expected from a market leader. The final assets were created for campaign use across digital platforms and brand channels, supporting both visibility and product confidence.",
     highlights: [
@@ -103,7 +110,12 @@ const caseStudies = [
       "Post-Production and Final Delivery",
     ],
     stats: [],
-    videoUrl: "",
+    videoUrls: [
+      "https://www.instagram.com/reel/C83461NNhYB/embed",
+      "https://www.instagram.com/reel/DJ4aLVhiMAG/embed",
+      "https://www.instagram.com/reel/DPv-nCWE48b/embed",
+    ],
+    videoAspect: "portrait",
     gallery: [],
   },
 ];

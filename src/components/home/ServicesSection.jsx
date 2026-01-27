@@ -44,7 +44,7 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <Section className="bg-blue-100/80 text-black">
+    <Section id="services" className="bg-blue-100/80 text-black">
       <div className="grid gap-12 lg:grid-cols-[1.1fr_2fr]">
         <div>
           <div className="text-xs uppercase tracking-[0.28em] text-blue-900">

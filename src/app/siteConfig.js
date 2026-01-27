@@ -7,16 +7,10 @@ export const siteConfig = {
     email: "info@tekmedia.com",
     phone: "+234 (0) 912 345 6789",
     hours: "Mon–Fri · 9am–6pm",
-    companyLinks: [
-      { label: "Film", href: "#" },
-      { label: "Forward", href: "#" },
-      { label: "Lab", href: "#" },
-    ],
     social: [
       { label: "Twitter", href: "#" },
       { label: "Instagram", href: "#" },
-      { label: "Flickr", href: "#" },
-      { label: "Facebook", href: "#" },
+      { label: "TikTok", href: "#" },
     ],
   },
 };
