@@ -1,4 +1,3 @@
-import Hero from "../components/home/Hero.jsx";
 import AgencyIntro from "../components/home/AgencyIntro.jsx";
 import ServicesSection from "../components/home/ServicesSection.jsx";
 import FootprintSection from "../components/home/FootprintSection.jsx";
@@ -10,28 +9,25 @@ import CTASection from "../components/home/CTASection.jsx";
 export default function Home() {
   return (
     <>
-      {/* 1. Hero / Opening Section */}
-      <Hero />
-
-      {/* 2. Agency Introduction Section */}
+      {/* 1. Agency Introduction Section */}
       <AgencyIntro />
 
-      {/* 3. Services / What We Do Overview */}
+      {/* 2. Services / What We Do Overview */}
       <ServicesSection />
 
-      {/* 4. Client / Credibility Visual Block */}
+      {/* 3. Client / Credibility Visual Block */}
       <FootprintSection />
 
-      {/* 5. Case Studies / Work Preview */}
+      {/* 4. Case Studies / Work Preview */}
       <CaseStudies />
 
-      {/* 6. Agency Differentiation Section */}
+      {/* 5. Agency Differentiation Section */}
       <Differentiation />
 
-      {/* 7. Testimonials / Social Proof Slider */}
+      {/* 6. Testimonials / Social Proof Slider */}
       <Testimonials />
 
-      {/* 8. Final CTA / Contact Prompt */}
+      {/* 7. Final CTA / Contact Prompt */}
       <CTASection />
     </>
   );
