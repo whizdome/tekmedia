@@ -14,7 +14,7 @@ export default function CaseStudies() {
   }, []);
 
   return (
-    <Section className="bg-white text-black">
+    <Section id="work" className="bg-white text-black">
       <div className="flex items-end justify-between gap-6 mb-10">
         <div>
           <div className="text-xs uppercase tracking-[0.28em] text-blue-300">

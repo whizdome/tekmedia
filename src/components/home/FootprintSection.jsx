@@ -33,7 +33,7 @@ export default function FootprintSection() {
   ];
 
   return (
-    <Section className="bg-white text-black">
+    <Section id="clients" className="bg-white text-black">
       <div className="text-xs uppercase tracking-[0.28em] text-blue-700">
         Clients & credibility
       </div>

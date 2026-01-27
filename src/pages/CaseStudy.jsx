@@ -11,6 +11,12 @@ export default function CaseStudy() {
   const [lightboxImage, setLightboxImage] = useState("");
   const hasGallery = gallery.length > 0;
   const hasMultipleImages = gallery.length > 1;
+  const videos = useMemo(() => {
+    if (study?.videoUrls?.length) {
+      return study.videoUrls;
+    }
+    return study?.videoUrl ? [study.videoUrl] : [];
+  }, [study]);
 
   if (!study) {
     return (
@@ -51,7 +57,7 @@ export default function CaseStudy() {
         </Container>
       </section>
 
-      {study.videoUrl ? (
+      {videos.length ? (
         <section className="bg-white">
           <Container className="py-10 md:py-12">
             <div className="text-xs uppercase tracking-[0.28em] text-blue-700">
@@ -61,19 +67,30 @@ export default function CaseStudy() {
               Watch the feature story
             </h2>
             <div
-              className={`mt-6 mx-auto overflow-hidden rounded-2xl border border-black/10 bg-black shadow-sm ${
+              className={`mt-6 grid gap-6 ${
                 study.videoAspect === "portrait"
-                  ? "aspect-[9/16] max-w-[420px]"
-                  : "aspect-video"
+                  ? "sm:grid-cols-2 lg:grid-cols-3"
+                  : "grid-cols-1"
               }`}
             >
-              <iframe
-                title={`${study.title} video`}
-                src={study.videoUrl}
-                className="h-full w-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+              {videos.map((videoUrl, index) => (
+                <div
+                  key={`${videoUrl}-${index}`}
+                  className={`mx-auto overflow-hidden rounded-2xl border border-black/10 bg-black shadow-sm ${
+                    study.videoAspect === "portrait"
+                      ? "aspect-[9/16] max-w-[420px]"
+                      : "aspect-video w-full"
+                  }`}
+                >
+                  <iframe
+                    title={`${study.title} video ${index + 1}`}
+                    src={videoUrl}
+                    className="h-full w-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+              ))}
             </div>
           </Container>
         </section>
@@ -97,15 +114,15 @@ export default function CaseStudy() {
         </Container>
       </section>
 
-      <section className="bg-slate-50">
-        <Container className="py-12 md:py-16">
-          <div className="text-xs uppercase tracking-[0.28em] text-blue-700">
-            Photo gallery
-          </div>
-          <h2 className="mt-4 text-2xl md:text-3xl font-semibold text-black">
-            Campaign stills
-          </h2>
-          {hasGallery ? (
+      {hasGallery ? (
+        <section className="bg-slate-50">
+          <Container className="py-12 md:py-16">
+            <div className="text-xs uppercase tracking-[0.28em] text-blue-700">
+              Photo gallery
+            </div>
+            <h2 className="mt-4 text-2xl md:text-3xl font-semibold text-black">
+              Campaign stills
+            </h2>
             <div className="mt-8 rounded-2xl border border-black/10 bg-white p-6 shadow-sm">
               <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-black/10 bg-slate-50">
                 <button
@@ -154,19 +171,15 @@ export default function CaseStudy() {
                 </div>
               </div>
             </div>
-          ) : (
-            <div className="mt-8 rounded-2xl border border-black/10 bg-white p-8 text-black/60">
-              Photo gallery will be added once assets are delivered.
-            </div>
-          )}
-          <Link
-            to="/"
-            className="mt-10 inline-flex text-blue-600 underline underline-offset-4"
-          >
-            Back to home
-          </Link>
-        </Container>
-      </section>
+            <Link
+              to="/"
+              className="mt-10 inline-flex text-blue-600 underline underline-offset-4"
+            >
+              Back to home
+            </Link>
+          </Container>
+        </section>
+      ) : null}
       {lightboxImage ? (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-6">
           <button
