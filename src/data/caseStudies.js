@@ -37,7 +37,7 @@ const caseStudies = [
     category: "Social Media Management",
     summary:
       "Structured social management and content planning for a freshness-first lifestyle brand.",
-    coverImage: "",
+    coverImage: "/slurp_juices/cover.PNG",
     overview:
       "Slurp Juices and Smoothies is built around freshness, flavour, and a clear health-forward lifestyle. To support that positioning online, Tek Media managed Slurp’s social media presence with a focus on consistency, audience engagement, and content that matched the brand’s energy. Our work centred on structured social media management, combining clear planning, platform execution, and growth-focused optimisation to ensure the brand stayed active, recognisable, and connected to its community. The result was a stronger digital presence designed to keep Slurp top-of-mind and relevant across key social channels.",
     highlights: [
@@ -51,8 +51,14 @@ const caseStudies = [
       "Content Planning and Optimisation",
     ],
     stats: [],
-    videoUrl: "",
-    gallery: [],
+    videoUrl: "https://www.instagram.com/reel/C_H97_xOe7F/embed",
+    videoAspect: "portrait",
+    gallery: [
+      "/slurp_juices/slurp_juices_001.PNG",
+      "/slurp_juices/slurp_juices_002.PNG",
+      "/slurp_juices/slurp_juices_003.PNG",
+      "/slurp_juices/slurp_juices_004.PNG",
+    ],
   },
   {
     slug: "pu-exchange",
