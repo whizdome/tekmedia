@@ -3,59 +3,59 @@ import { siteConfig } from "../../app/siteConfig.js";
 export default function Footer() {
   const { footer } = siteConfig;
   return (
-    <footer className="border-t border-black/10 mt-10 bg-slate-50">
+    <footer className="border-t border-blue-900 mt-10 bg-blue-950 text-white">
       <div className="max-w-6xl mx-auto px-4 md:px-6 py-12 grid gap-10 lg:grid-cols-[1.3fr_1fr_1fr]">
         <div>
           <img src="/tekmedia-logo.svg" alt="Tek Media" className="h-8 w-auto" />
-          <p className="mt-4 text-sm leading-relaxed text-black/70">
+          <p className="mt-4 text-sm leading-relaxed text-white/70">
             We help brands find clarity, earn attention, and convert audiences
             through bold creative and performance-driven marketing.
           </p>
-          <div className="mt-6 space-y-2 text-sm text-black/70">
-            <div className="text-xs uppercase tracking-[0.28em] text-black/60">
+          <div className="mt-6 space-y-2 text-sm text-white/70">
+            <div className="text-xs uppercase tracking-[0.28em] text-white/60">
               {footer.city}
             </div>
             <p>{footer.address}</p>
             <a
               href={footer.mapLink}
-              className="underline underline-offset-4 text-blue-600 hover:text-blue-700"
+              className="underline underline-offset-4 text-blue-200 hover:text-white"
             >
               Find Us
             </a>
           </div>
         </div>
         <div>
-          <div className="text-xs uppercase tracking-[0.28em] text-black/60">
+          <div className="text-xs uppercase tracking-[0.28em] text-white/60">
             Contact
           </div>
-          <div className="mt-4 space-y-2 text-sm text-black/70">
+          <div className="mt-4 space-y-2 text-sm text-white/70">
             <a
               href={`mailto:${footer.email}`}
-              className="block text-blue-600 hover:text-blue-700 underline underline-offset-4"
+              className="block text-blue-200 hover:text-white underline underline-offset-4"
             >
               {footer.email}
             </a>
             <a
               href={`tel:${footer.phone}`}
-              className="block text-black/70 hover:text-black transition-colors"
+              className="block text-white/70 hover:text-white transition-colors"
             >
               {footer.phone}
             </a>
-            <div className="text-black/60">{footer.hours}</div>
+            <div className="text-white/60">{footer.hours}</div>
           </div>
         </div>
         <div>
-          <div className="text-xs uppercase tracking-[0.28em] text-black/60">
+          <div className="text-xs uppercase tracking-[0.28em] text-white/60">
             Social
           </div>
-          <ul className="mt-4 flex items-center gap-4 text-black/70">
+          <ul className="mt-4 flex items-center gap-4 text-white/70">
             {footer.social.map((s) => (
               <li key={s.label}>
                 <a
                   href={s.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white text-black/70 transition hover:text-blue-700"
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-blue-900 text-white/80 transition hover:text-white hover:bg-blue-800"
                   aria-label={s.label}
                 >
                   {s.label === "Facebook" ? (

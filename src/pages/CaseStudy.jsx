@@ -23,7 +23,11 @@ export default function CaseStudy() {
       <section className="bg-white">
         <Container className="py-16 md:py-24">
           <div className="text-sm text-black/60">Case study not found.</div>
-          <Link to="/" className="mt-4 inline-flex text-blue-600 underline">
+          <Link
+            to="/"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="mt-4 inline-flex text-blue-600 underline"
+          >
             Back to home
           </Link>
         </Container>
@@ -173,6 +177,7 @@ export default function CaseStudy() {
             </div>
             <Link
               to="/"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               className="mt-10 inline-flex text-blue-600 underline underline-offset-4"
             >
               Back to home
@@ -197,6 +202,38 @@ export default function CaseStudy() {
             >
               ✕
             </button>
+            {hasMultipleImages ? (
+              <>
+                <button
+                  type="button"
+                  onClick={() =>
+                    setGalleryIndex((prev) => {
+                      const nextIndex = prev === 0 ? gallery.length - 1 : prev - 1;
+                      setLightboxImage(gallery[nextIndex]);
+                      return nextIndex;
+                    })
+                  }
+                  className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-2 text-blue-700 shadow-sm transition hover:bg-white"
+                  aria-label="Previous image"
+                >
+                  <span aria-hidden="true">‹</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() =>
+                    setGalleryIndex((prev) => {
+                      const nextIndex = (prev + 1) % gallery.length;
+                      setLightboxImage(gallery[nextIndex]);
+                      return nextIndex;
+                    })
+                  }
+                  className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-blue-700 p-2 text-white shadow-sm transition hover:bg-blue-800"
+                  aria-label="Next image"
+                >
+                  <span aria-hidden="true">›</span>
+                </button>
+              </>
+            ) : null}
             <img
               src={lightboxImage}
               alt="Expanded campaign still"

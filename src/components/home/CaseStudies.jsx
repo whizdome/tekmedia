@@ -27,6 +27,7 @@ export default function CaseStudies() {
 
         <Link
           to="/work"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="text-xs uppercase tracking-[0.18em] text-blue-700 hover:text-blue-800 transition-colors"
         >
           View All Work
@@ -38,6 +39,7 @@ export default function CaseStudies() {
           <Link
             key={study.slug}
             to={`/case-studies/${study.slug}`}
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="group w-[260px] shrink-0 rounded-2xl border border-black/10 bg-white overflow-hidden shadow-sm transition-transform hover:-translate-y-1 hover:shadow-md"
           >
             <div className="aspect-[4/5] relative overflow-hidden">

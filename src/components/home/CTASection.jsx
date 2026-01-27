@@ -19,6 +19,7 @@ export default function CTASection() {
             </p>
             <Link
               to="/contact"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               className="mt-6 inline-flex rounded-full bg-blue-600 px-6 py-3 text-xs uppercase tracking-[0.24em] text-white hover:bg-blue-700 transition-colors"
             >
               Contact Tek Media
