@@ -20,7 +20,7 @@ export default function Navbar() {
           />
         </Link>
 
-        <nav className="flex w-full flex-wrap items-center gap-4 text-xs uppercase tracking-[0.18em] text-black/70 sm:w-auto">
+        <nav className="hidden w-full flex-wrap items-center gap-4 text-xs uppercase tracking-[0.18em] text-black/70 sm:w-auto md:flex">
           {nav.map((item) => (
             <a
               key={item.href}

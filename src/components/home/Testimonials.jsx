@@ -1,6 +1,5 @@
 import Section from "../ui/Section.jsx";
-import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const testimonials = [
   {
@@ -56,6 +55,8 @@ const testimonials = [
 
 export default function Testimonials() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const startX = useRef(0);
+  const deltaX = useRef(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -63,6 +64,28 @@ export default function Testimonials() {
     }, 5000);
     return () => clearInterval(interval);
   }, []);
+
+  const handleTouchStart = (event) => {
+    startX.current = event.touches[0].clientX;
+    deltaX.current = 0;
+  };
+
+  const handleTouchMove = (event) => {
+    deltaX.current = event.touches[0].clientX - startX.current;
+  };
+
+  const handleTouchEnd = () => {
+    if (Math.abs(deltaX.current) < 40) {
+      return;
+    }
+    if (deltaX.current < 0) {
+      setActiveIndex((prev) => (prev + 1) % testimonials.length);
+    } else {
+      setActiveIndex((prev) =>
+        prev === 0 ? testimonials.length - 1 : prev - 1
+      );
+    }
+  };
 
   return (
     <Section id="feedback" className="bg-white text-black">
@@ -75,7 +98,12 @@ export default function Testimonials() {
       </h2>
 
       <div className="mt-10 max-w-4xl">
-        <div className="relative overflow-hidden">
+        <div
+          className="relative overflow-hidden"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
           <div
             className="flex transition-transform duration-500"
             style={{ transform: `translateX(-${activeIndex * 100}%)` }}
@@ -112,13 +140,6 @@ export default function Testimonials() {
           />
         ))}
       </div>
-      <Link
-        to="/contact"
-        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className="mt-8 inline-flex rounded-full border border-blue-600 px-5 py-2 text-xs uppercase tracking-[0.24em] text-blue-700 transition hover:bg-blue-50"
-      >
-        Share feedback
-      </Link>
       </div>
     </Section>
   );
