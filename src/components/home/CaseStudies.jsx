@@ -17,10 +17,10 @@ export default function CaseStudies() {
     <Section id="work" className="bg-white text-black">
       <div className="flex items-end justify-between gap-6 mb-10">
         <div>
-          <div className="text-xs uppercase tracking-[0.28em] text-blue-700">
+          <div className="text-xs uppercase tracking-[0.28em] text-blue-300">
             Our Work
           </div>
-          <h2 className="mt-3 text-2xl md:text-3xl font-semibold text-black">
+          <h2 className="mt-3 text-2xl md:text-3xl font-semibold text-white">
             Case Studies
           </h2>
         </div>
