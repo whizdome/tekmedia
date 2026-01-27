@@ -22,6 +22,7 @@ export default function OurWork() {
             <Link
               key={study.slug}
               to={`/case-studies/${study.slug}`}
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               className="group overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm transition-transform hover:-translate-y-1 hover:shadow-md"
             >
               <div className="relative aspect-[4/3] bg-blue-50">

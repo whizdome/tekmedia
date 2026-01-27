@@ -11,7 +11,7 @@ const nav = [
 export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-black/10">
-      <Container className="py-4 flex flex-wrap items-center justify-between gap-6">
+      <Container className="py-3 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
         <Link to="/" className="flex items-center gap-3">
           <img
             src="/tekmedia-logo.svg"
@@ -20,7 +20,7 @@ export default function Navbar() {
           />
         </Link>
 
-        <nav className="flex flex-wrap items-center gap-6 text-xs uppercase tracking-[0.18em] text-black/70">
+        <nav className="flex w-full flex-wrap items-center gap-4 text-xs uppercase tracking-[0.18em] text-black/70 sm:w-auto">
           {nav.map((item) => (
             <a
               key={item.href}

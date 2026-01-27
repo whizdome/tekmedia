@@ -1,4 +1,5 @@
 import Section from "../ui/Section.jsx";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 const testimonials = [
@@ -100,17 +101,24 @@ export default function Testimonials() {
             ))}
           </div>
         </div>
-        <div className="slider-dots">
-          {testimonials.map((_, idx) => (
-            <button
-              key={idx}
-              type="button"
-              onClick={() => setActiveIndex(idx)}
-              className={`slider-dot ${idx === activeIndex ? "active" : ""}`}
-              aria-label={`Go to testimonial ${idx + 1}`}
-            />
-          ))}
-        </div>
+      <div className="slider-dots">
+        {testimonials.map((_, idx) => (
+          <button
+            key={idx}
+            type="button"
+            onClick={() => setActiveIndex(idx)}
+            className={`slider-dot ${idx === activeIndex ? "active" : ""}`}
+            aria-label={`Go to testimonial ${idx + 1}`}
+          />
+        ))}
+      </div>
+      <Link
+        to="/contact"
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        className="mt-8 inline-flex rounded-full border border-blue-600 px-5 py-2 text-xs uppercase tracking-[0.24em] text-blue-700 transition hover:bg-blue-50"
+      >
+        Share feedback
+      </Link>
       </div>
     </Section>
   );
