@@ -41,9 +41,19 @@ export default function CaseStudies() {
             className="group w-[260px] shrink-0 rounded-2xl border border-black/10 bg-white overflow-hidden shadow-sm transition-transform hover:-translate-y-1 hover:shadow-md"
           >
             <div className="aspect-[4/5] relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-blue-100/40" />
+              {study.coverImage ? (
+                <img
+                  src={study.coverImage}
+                  alt={`${study.title} cover`}
+                  className="absolute inset-0 h-full w-full object-cover"
+                  loading="lazy"
+                />
+              ) : (
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-blue-100/40" />
+              )}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
               <div className="absolute inset-0 flex items-end p-5">
-                <div className="text-xs uppercase tracking-[0.18em] text-blue-700">
+                <div className="text-xs uppercase tracking-[0.18em] text-white">
                   {study.category}
                 </div>
               </div>

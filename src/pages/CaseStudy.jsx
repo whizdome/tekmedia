@@ -1,10 +1,15 @@
 import { Link, useParams } from "react-router-dom";
+import { useMemo, useState } from "react";
 import Container from "../components/ui/Container.jsx";
 import caseStudies from "../data/caseStudies.js";
 
 export default function CaseStudy() {
   const { slug } = useParams();
   const study = caseStudies.find((item) => item.slug === slug);
+  const gallery = useMemo(() => study?.gallery ?? [], [study]);
+  const [galleryIndex, setGalleryIndex] = useState(0);
+  const hasGallery = gallery.length > 0;
+  const hasMultipleImages = gallery.length > 1;
 
   if (!study) {
     return (
@@ -45,6 +50,28 @@ export default function CaseStudy() {
         </Container>
       </section>
 
+      {study.videoUrl ? (
+        <section className="bg-white">
+          <Container className="py-10 md:py-12">
+            <div className="text-xs uppercase tracking-[0.28em] text-blue-700">
+              Campaign video
+            </div>
+            <h2 className="mt-4 text-2xl md:text-3xl font-semibold text-black">
+              Watch the feature story
+            </h2>
+            <div className="mt-6 aspect-video overflow-hidden rounded-2xl border border-black/10 bg-black shadow-sm">
+              <iframe
+                title={`${study.title} video`}
+                src={study.videoUrl}
+                className="h-full w-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          </Container>
+        </section>
+      ) : null}
+
       <section className="bg-white">
         <Container className="py-12 md:py-16">
           <div>
@@ -66,18 +93,58 @@ export default function CaseStudy() {
       <section className="bg-slate-50">
         <Container className="py-12 md:py-16">
           <div className="text-xs uppercase tracking-[0.28em] text-blue-700">
-            Campaign media
+            Photo gallery
           </div>
           <h2 className="mt-4 text-2xl md:text-3xl font-semibold text-black">
-            Video and photo gallery
+            Campaign stills
           </h2>
-          <p className="mt-4 max-w-2xl text-black/70 leading-relaxed">
-            Final videos and a full photo gallery will be added once assets are
-            delivered.
-          </p>
-          <div className="mt-8 rounded-2xl border border-black/10 bg-white p-8 text-black/60">
-            Media gallery coming soon.
-          </div>
+          {hasGallery ? (
+            <div className="mt-8 rounded-2xl border border-black/10 bg-white p-6 shadow-sm">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-black/10 bg-slate-50">
+                <img
+                  src={gallery[galleryIndex]}
+                  alt={`${study.title} gallery ${galleryIndex + 1}`}
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
+                {hasMultipleImages ? (
+                  <>
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setGalleryIndex((prev) =>
+                          prev === 0 ? gallery.length - 1 : prev - 1
+                        )
+                      }
+                      className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-2 text-blue-700 shadow-sm transition hover:bg-white"
+                      aria-label="Previous image"
+                    >
+                      <span aria-hidden="true">‹</span>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setGalleryIndex((prev) => (prev + 1) % gallery.length)
+                      }
+                      className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-blue-700 p-2 text-white shadow-sm transition hover:bg-blue-800"
+                      aria-label="Next image"
+                    >
+                      <span aria-hidden="true">›</span>
+                    </button>
+                  </>
+                ) : null}
+              </div>
+              <div className="mt-6 flex flex-wrap items-center justify-between gap-3">
+                <div className="text-sm text-black/60">
+                  Image {galleryIndex + 1} of {gallery.length}
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className="mt-8 rounded-2xl border border-black/10 bg-white p-8 text-black/60">
+              Photo gallery will be added once assets are delivered.
+            </div>
+          )}
           <Link
             to="/"
             className="mt-10 inline-flex text-blue-600 underline underline-offset-4"
