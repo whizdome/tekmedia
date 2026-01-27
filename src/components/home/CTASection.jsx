@@ -26,7 +26,7 @@ export default function CTASection() {
           </div>
           <form
             className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm"
-            action="mailto:info@tekmedia.com"
+            action="mailto:info@tekmediang.com"
             method="post"
             encType="text/plain"
           >
