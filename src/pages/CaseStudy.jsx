@@ -60,7 +60,13 @@ export default function CaseStudy() {
             <h2 className="mt-4 text-2xl md:text-3xl font-semibold text-black">
               Watch the feature story
             </h2>
-            <div className="mt-6 aspect-video overflow-hidden rounded-2xl border border-black/10 bg-black shadow-sm">
+            <div
+              className={`mt-6 mx-auto overflow-hidden rounded-2xl border border-black/10 bg-black shadow-sm ${
+                study.videoAspect === "portrait"
+                  ? "aspect-[9/16] max-w-[420px]"
+                  : "aspect-video"
+              }`}
+            >
               <iframe
                 title={`${study.title} video`}
                 src={study.videoUrl}
