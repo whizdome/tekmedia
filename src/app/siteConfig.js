@@ -1,8 +1,8 @@
 export const siteConfig = {
   footer: {
     city: "LAGOS",
-    address: "Ewu Elepe, Amazing Grace Plaza, Itagama, beside Taramed Filling Station, Ijede Road Ijede, Ikorodu 104102, Lagos, Nigeria",
-    mapLink: "https://maps.app.goo.gl/Aq6gJCDNQCFWsmGy5",
+    address: "Lagos, Nigeria",
+    mapLink: "https://maps.app.goo.gl/S8GvXuviUag63ocX9",
     email: "info@tekmediang.com",
     phone: "+234(0)7066389437",
     hours: "Mon–Sat · 8.30am–5pm",
