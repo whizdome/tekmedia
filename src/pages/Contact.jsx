@@ -55,7 +55,6 @@ export default function Contact() {
                   Location
                 </div>
                 <p className="text-black/70">
-                  Ewu Elepe, Amazing Grace Plaza, Itagama, beside Taramed Filling Station, Ijede Road Ijede, Ikorodu  <br></br> 104102, <br></br>
                 Lagos, Nigeria
                 </p>
               </div>
