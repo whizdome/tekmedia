@@ -39,11 +39,11 @@ export default function FootprintSection() {
       </div>
 
       <h2 className="mt-3 text-2xl md:text-3xl font-semibold text-black max-w-3xl leading-tight">
-      Trusted by teams across modern businesses and creative brands.
+      Trusted by teams across fintech, consumer brands, lifestyle, and home innovation.
       </h2>
 
       <p className="mt-3 max-w-3xl text-black/70 leading-relaxed">
-        A snapshot of brands we’ve supported across campaigns, content and growth.
+      A snapshot of brands we’ve supported through videography, content, and digital execution.
       </p>
 
       <div className="mt-4 space-y-6 overflow-hidden">
