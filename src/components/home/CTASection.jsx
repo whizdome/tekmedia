@@ -11,11 +11,9 @@ export default function CTASection() {
               Ready when you are
             </div>
             <div className="mt-4 text-2xl md:text-3xl font-semibold leading-tight text-black">
-              Let’s build something unforgettable together.
-            </div>
+            Let’s build with clarity and intention.
             <p className="mt-4 text-sm text-black/70 leading-relaxed">
-              Tell us about your next launch, expansion, or rebrand and we’ll map out
-              the fastest path to impact.
+            Tell us about your next campaign, launch, or brand shift, and we’ll shape the creative direction and execution to match
             </p>
             <Link
               to="/contact"
@@ -77,6 +75,7 @@ export default function CTASection() {
             </div>
           </form>
         </div>
+      </div>
       </div>
     </Section>
   );

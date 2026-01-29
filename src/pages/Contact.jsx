@@ -11,11 +11,10 @@ export default function Contact() {
               Get In Touch
             </div>
             <h1 className="mt-4 text-4xl md:text-6xl font-semibold leading-[1.02] text-black">
-              Let's start a conversation.
+            Let’s discuss what you’re building.
             </h1>
             <p className="mt-6 max-w-xl text-black/70 leading-relaxed">
-              Have a project in mind? We'd love to hear from you. Reach out
-              and let's discuss how we can help grow your brand.
+            Have a project in mind? Reach out and we’ll explore the right creative direction and execution.
             </p>
           </div>
         </Container>
