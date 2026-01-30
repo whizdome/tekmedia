@@ -34,12 +34,12 @@ export default function FootprintSection() {
 
   return (
     <Section id="clients" className="bg-white text-black">
-      <div className="text-xs uppercase tracking-[0.28em] text-blue-700">
-        Clients & credibility
-      </div>
+  <div className="text-sm font-black uppercase tracking-[0.32em] text-blue-700">
+    Clients
+  </div>
 
       <h2 className="mt-3 text-2xl md:text-3xl font-semibold text-black max-w-3xl leading-tight">
-      Trusted by teams across fintech, consumer brands, lifestyle, and home innovation.
+      Trusted by brands across fintech, consumer brands, lifestyle, and home innovation.
       </h2>
 
       <p className="mt-3 max-w-3xl text-black/70 leading-relaxed">

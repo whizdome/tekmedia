@@ -4,9 +4,9 @@ import Container from "../ui/Container.jsx";
 import { Menu, X } from "lucide-react";
 
 const nav = [
-  { label: "About us", href: "/#services" },
-  { label: "Our clients", href: "/#clients" },
-  { label: "Our work", href: "/#work" },
+  { label: "About", href: "/#services" },
+  { label: "clients", href: "/#clients" },
+  { label: "Case studies", href: "/#work" },
   { label: "Feedback", href: "/#feedback" },
 ];
 

@@ -10,10 +10,10 @@ export default function OurWork() {
           Our Work
         </div>
         <h1 className="mt-4 text-3xl md:text-5xl font-semibold text-black">
-          Case studies & campaigns
+          Case studies
         </h1>
         <p className="mt-6 max-w-2xl text-black/70 leading-relaxed">
-          Explore a selection of brand stories, services delivered, and campaign
+          Explore a selection of brand stories, services delivered, and
           work led by Tek Media.
         </p>
 
@@ -48,7 +48,7 @@ export default function OurWork() {
                   {study.summary}
                 </p>
                 <span className="mt-6 inline-flex text-sm font-semibold text-blue-700">
-                  View case study
+                  View Case Study
                 </span>
               </div>
             </Link>
