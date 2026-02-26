@@ -92,7 +92,8 @@ jobs:
         kubectl apply -f k8s/deployment.yaml
         kubectl apply -f k8s/service.yaml
 
-        - name: Get Service URL
-        run: |
-          kubectl wait --for=jsonpath='{.status.loadBalancer.ingress}' service/my-app --timeout=120s
-          kubectl get service my-app
+    # 1️⃣2️⃣ Get Service URL
+    - name: Get Service URL
+      run: |
+        kubectl wait --for=jsonpath='{.status.loadBalancer.ingress}' service/my-app --timeout=120s
+        kubectl get service my-app
