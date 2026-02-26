@@ -1,6 +1,6 @@
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
-  version = "~> 20.31"  # ← key fix
+  version = "~> 20.31"
 
   cluster_name    = var.cluster_name
   cluster_version = "1.29"
@@ -11,14 +11,14 @@ module "eks" {
   cluster_endpoint_public_access  = true
   cluster_endpoint_private_access = true
 
-enable_cluster_creator_admin_permissions = true
+  enable_cluster_creator_admin_permissions = true
 
   access_entries = {
     github_actions = {
-      principal_arn = "arn:aws:iam::${var.aws_account_id}:role/${var.github_actions_role_name}"
+      principal_arn = var.github_actions_role_arn
       policy_associations = {
         admin = {
-          policy_arn = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy"
+          policy_arn   = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy"
           access_scope = {
             type = "cluster"
           }
@@ -26,6 +26,7 @@ enable_cluster_creator_admin_permissions = true
       }
     }
   }
+
   eks_managed_node_groups = {
     default = {
       instance_types = ["t2.micro"]
