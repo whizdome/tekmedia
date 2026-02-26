@@ -1,0 +1,16 @@
+import Page from "../components/layout/Page.jsx";
+
+export default function MeetTheTeam() {
+  return (
+    <Page title="Our Teams">
+      <div className="mx-auto max-w-6xl px-4 py-16">
+        <h1 className="text-4xl md:text-5xl font-semibold tracking-tight">
+          Meet The Team
+        </h1>
+        <p className="mt-4 max-w-2xl text-zinc-700 leading-relaxed">
+          Team page placeholder. Add your team sections/cards here.
+        </p>
+      </div>
+    </Page>
+  );
+}
