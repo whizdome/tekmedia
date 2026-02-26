@@ -2,7 +2,7 @@ name: Build Push Deploy
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 permissions:
   id-token: write
@@ -13,40 +13,63 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+    # 1️⃣ Checkout repository
+    - name: Checkout code
+      uses: actions/checkout@v4
 
-    - uses: aws-actions/configure-aws-credentials@v4
+    # 2️⃣ Configure AWS credentials (OIDC)
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
       with:
         role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
         aws-region: ${{ secrets.AWS_REGION }}
 
+    # 3️⃣ Install Terraform (MISSING BEFORE)
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v3
+      with:
+        terraform_version: 1.6.6
+
+    # 4️⃣ Terraform Init + Apply
     - name: Terraform Apply
       working-directory: terraform
       run: |
         terraform init
         terraform apply -auto-approve
 
+    # 5️⃣ Login to Amazon ECR
     - name: Login to ECR
       run: |
-        aws ecr get-login-password |
-        docker login --username AWS \
+        aws ecr get-login-password --region ${{ secrets.AWS_REGION }} \
+        | docker login \
+        --username AWS \
         --password-stdin \
         ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com
 
+    # 6️⃣ Build & Push Docker Image
     - name: Build and Push Image
       run: |
-        docker build -t my-app:${{ github.sha }} ./app
+        docker build -t my-app:${{ github.sha }} .
         docker tag my-app:${{ github.sha }} \
         ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/${{ secrets.ECR_REPO }}:${{ github.sha }}
         docker push \
         ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/${{ secrets.ECR_REPO }}:${{ github.sha }}
 
+    # 7️⃣ Install kubectl (MISSING BEFORE)
+    - name: Install kubectl
+      run: |
+        curl -LO https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl
+        chmod +x kubectl
+        sudo mv kubectl /usr/local/bin/
+
+    # 8️⃣ Update kubeconfig for EKS
     - name: Update kubeconfig
       run: |
         aws eks update-kubeconfig \
         --name ${{ secrets.EKS_CLUSTER_NAME }} \
         --region ${{ secrets.AWS_REGION }}
 
+    # 9️⃣ Deploy to EKS
     - name: Deploy to EKS
       run: |
         sed -i "s|IMAGE_PLACEHOLDER|${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/${{ secrets.ECR_REPO }}:${{ github.sha }}|g" k8s/deployment.yaml
