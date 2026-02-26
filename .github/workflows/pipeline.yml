@@ -90,3 +90,9 @@ jobs:
       run: |
         sed -i "s|IMAGE_PLACEHOLDER|${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/${{ secrets.ECR_REPO }}:${{ github.sha }}|g" k8s/deployment.yaml
         kubectl apply -f k8s/deployment.yaml
+        kubectl apply -f k8s/service.yaml
+
+        - name: Get Service URL
+        run: |
+          kubectl wait --for=jsonpath='{.status.loadBalancer.ingress}' service/my-app --timeout=120s
+          kubectl get service my-app
