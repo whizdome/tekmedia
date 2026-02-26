@@ -24,7 +24,7 @@ jobs:
         role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
         aws-region: ${{ secrets.AWS_REGION }}
 
-    # 3️⃣ Install Terraform (MISSING BEFORE)
+    # 3️⃣ Install Terraform
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v3
       with:
@@ -41,21 +41,21 @@ jobs:
     - name: Login to ECR
       run: |
         aws ecr get-login-password --region ${{ secrets.AWS_REGION }} \
-        | docker login \
-        --username AWS \
-        --password-stdin \
-        ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com
+          | docker login \
+          --username AWS \
+          --password-stdin \
+          ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com
 
     # 6️⃣ Build & Push Docker Image
     - name: Build and Push Image
       run: |
         docker build -t my-app:${{ github.sha }} .
         docker tag my-app:${{ github.sha }} \
-        ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/${{ secrets.ECR_REPO }}:${{ github.sha }}
+          ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/${{ secrets.ECR_REPO }}:${{ github.sha }}
         docker push \
-        ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/${{ secrets.ECR_REPO }}:${{ github.sha }}
+          ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/${{ secrets.ECR_REPO }}:${{ github.sha }}
 
-    # 7️⃣ Install kubectl (MISSING BEFORE)
+    # 7️⃣ Install kubectl
     - name: Install kubectl
       run: |
         curl -LO https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl
@@ -66,8 +66,8 @@ jobs:
     - name: Update kubeconfig
       run: |
         aws eks update-kubeconfig \
-        --name ${{ secrets.EKS_CLUSTER_NAME }} \
-        --region ${{ secrets.AWS_REGION }}
+          --name ${{ secrets.EKS_CLUSTER_NAME }} \
+          --region ${{ secrets.AWS_REGION }}
 
     # 9️⃣ Deploy to EKS
     - name: Deploy to EKS
